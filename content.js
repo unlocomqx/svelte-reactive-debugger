@@ -12,3 +12,7 @@ function post(type, detail) {
     detail,
   });
 }
+
+chrome.runtime.sendMessage({
+  type: 'Reload',
+});

@@ -30,6 +30,9 @@ backgroundPort.onMessage.addListener(function (request) {
 			duration,
 		});
 	}
+	if (request.type === "Reload") {
+		store.clear();
+	}
 });
 
 const app = new App({
