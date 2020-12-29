@@ -3,8 +3,6 @@
   import { store } from "../store";
   import { TableSort } from "svelte-tablesort";
 
-  let statements;
-
   $: statements = groupStatements($store)
 
   function groupStatements(events) {
