@@ -38,7 +38,7 @@ export default {
     sourcemap: true,
     format: "iife",
     name: "app",
-    file: "../dist/build/bundle.js",
+    file: "../extension/dist/build/bundle.js",
     globals: {chrome: "chrome"},
   },
   plugins: [

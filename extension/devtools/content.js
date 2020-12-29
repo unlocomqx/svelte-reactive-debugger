@@ -7,12 +7,16 @@ document.addEventListener("SvelteReactiveEnd", function (ev) {
 });
 
 function post(type, detail) {
-  chrome.runtime.sendMessage({
-    type,
-    detail,
-  });
+  if (typeof chrome.app.isInstalled !== "undefined") {
+    chrome.runtime.sendMessage({
+      type,
+      detail,
+    });
+  }
 }
 
-chrome.runtime.sendMessage({
-  type: 'Reload',
-});
+if (typeof chrome.app.isInstalled !== "undefined") {
+  chrome.runtime.sendMessage({
+    type: "Reload",
+  });
+}

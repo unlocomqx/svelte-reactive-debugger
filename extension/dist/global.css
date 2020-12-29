@@ -65,7 +65,7 @@ body.dark table.tablesort tbody tr:nth-child(even) {
   height: 24px;
   border: none;
   background-color: transparent;
-  background-image: url(./icons/largeIcons.svg);
+  background-image: url(icons/largeIcons.svg);
   cursor: pointer;
   outline: none;
 }
