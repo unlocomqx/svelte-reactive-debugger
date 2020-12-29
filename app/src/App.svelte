@@ -35,18 +35,23 @@
   function time(ms) {
     return new Date(ms).toISOString().slice(11, -1);
   }
+
+  function clearAll() {
+    store.clear();
+  }
 </script>
 
 <div>
-  <div>
-    <label for="group_statements">
-      <input type="checkbox" bind:checked={group_statements}> Group statement
-    </label>
+  <div class="toolbar">
+    <button on:click={clearAll} class="icon delete"></button>
+    <div class="divider"></div>
+    <input type="checkbox" id="group_statements" bind:checked={group_statements}/>
+    <label style="position: relative; top: -1px;" for="group_statements">Group statements</label>
   </div>
   {#if group_statements}
     <TableSort items={Array.from(statements.values())}>
       <tr slot="thead">
-        <th data-sort="statement">Statement</th>
+        <th data-sort="statement">Statements</th>
         <th data-sort="count">Count</th>
         <th data-sort="duration">Duration</th>
       </tr>
@@ -73,20 +78,18 @@
 </div>
 
 <style>
-  ul  {
-    padding: 0;
-    list-style-type: none;
-  }
-
-  li {
-    padding: 2px 0;
+  .toolbar {
+    display: flex;
+    align-items: center;
+    padding: 3px 5px;
     border-bottom: 1px solid #3a3a3a;
+    margin-bottom: 5px;
   }
 
-	.count {
-    color: rgb(148 148 148);
-		background-color: rgb(66 89 127);
-    border-radius: 10px;
-    padding: 0 5px;
-	}
+  .divider {
+    display: inline-block;
+    border-left: 1px solid #3a3a3a;
+    height: 20px;
+    padding: 0 3px;
+  }
 </style>

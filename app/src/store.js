@@ -1,7 +1,7 @@
 import { writable } from "svelte/store";
 
 function createStore() {
-  const {subscribe, update} = writable([]);
+  const {subscribe, update, set} = writable([]);
 
   return {
     subscribe,
@@ -11,6 +11,10 @@ function createStore() {
         state.push(data);
         return state;
       });
+    },
+
+    clear() {
+      set([]);
     }
   };
 }
