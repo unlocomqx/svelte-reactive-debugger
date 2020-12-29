@@ -1,0 +1,18 @@
+{
+  "name": "SvelteReactiveDebugger",
+  "version": "0.1",
+  "description": "Monitor svelte reactive statements",
+  "devtools_page": "devtools.html",
+  "web_accessible_resources": ["content.js"],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "permissions": [
+    "tabs",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "manifest_version": 2
+}
