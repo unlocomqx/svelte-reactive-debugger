@@ -22,6 +22,7 @@ function createStore() {
 
 export const store = createStore();
 
-export const ui_store = localStorageWritable('svrxd_prefs', {
+export const ui_store = localStorageWritable("svrxd_prefs", {
   group_statements: true,
+  preserve_log: false,
 });

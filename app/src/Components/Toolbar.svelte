@@ -8,9 +8,16 @@
 
 <div class="toolbar">
   <button on:click={clearAll} class="icon delete" title="Clear all"></button>
+
   <div class="divider"></div>
+
   <input type="checkbox" id="group_statements" bind:checked={$ui_store.group_statements}/>
   <label style="position: relative; top: -1px;" for="group_statements">Group statements</label>
+
+  <div class="spacer"></div>
+
+  <input type="checkbox" id="preserve_log" bind:checked={$ui_store.preserve_log}/>
+  <label style="position: relative; top: -1px;" for="preserve_log">Preserve log</label>
 </div>
 
 <style>
@@ -25,5 +32,9 @@
     border-left: 1px solid #3a3a3a;
     height: 20px;
     margin: 0 3px;
+  }
+
+  .spacer {
+    margin-right: 5px;
   }
 </style>

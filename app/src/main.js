@@ -1,6 +1,9 @@
 import { devtools } from "chrome";
 import App from './App.svelte';
-import { store } from "./store";
+import { get } from "svelte/store";
+import { store, ui_store } from "./store";
+
+const prefs = get(ui_store);
 
 function setDarkMode(theme) {
 	if (theme == 'dark') document.body.classList.add('dark')
@@ -30,7 +33,7 @@ backgroundPort.onMessage.addListener(function (request) {
 			duration,
 		});
 	}
-	if (request.type === "Reload") {
+	if (request.type === "Reload" && !prefs.preserve_log) {
 		store.clear();
 	}
 });
