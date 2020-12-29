@@ -31,19 +31,22 @@
   }
 </script>
 
-<TableSort items={Array.from(statements.values())}>
-  <tr slot="thead">
-    <th data-sort="statement">Statements</th>
-    <th data-sort="count">Count</th>
-    <th data-sort="duration">Duration</th>
-  </tr>
-  <tr slot="tbody" let:item={item}>
-    <td>{item.statement}</td>
-    <td>
-      {#key item.count}
-        <div in:fade={{duration: 100}}>{item.count}</div>
-      {/key}
-    </td>
-    <td>{item.duration}</td>
-  </tr>
-</TableSort>
+{#if statements.size > 0}
+  <div in:fade={{duration: 100}}>
+    <TableSort items={Array.from(statements.values())}>
+      <tr slot="thead">
+        <th data-sort="statement">Statements</th>
+        <th data-sort="count">Count</th>
+        <th data-sort="duration">Duration</th>
+      </tr>
+      <tr slot="tbody" let:item={item}>
+        <td>{item.statement}</td>
+        <td>
+          {#key item.count}
+            <div in:fade={{duration: 100}}>{item.count}</div>
+          {/key}
+        </td>
+        <td>{item.duration}</td>
+      </tr>
+    </TableSort>
+  </div>{/if}
