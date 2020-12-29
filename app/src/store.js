@@ -22,12 +22,13 @@ function createStore() {
 export const store = createStore();
 
 function createUiStore() {
-  const {subscribe} = writable({
+  const {subscribe, set} = writable({
     group_statements: true,
   });
 
   return {
     subscribe,
+    set,
   };
 }
 

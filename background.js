@@ -1,6 +1,6 @@
 // background.js
 var connections = new Map();
-console.log("svelte rxd background");
+
 chrome.runtime.onConnect.addListener(function (port) {
 
   var extensionListener = function (message) {
@@ -35,7 +35,6 @@ chrome.runtime.onConnect.addListener(function (port) {
 // current tab
 chrome.runtime.onMessage.addListener(function (request, sender) {
   // Messages from content scripts should have sender.tab set
-  console.log(request, sender);
   if (sender.tab) {
     var tabId = sender.tab.id;
     if (connections.has(tabId)) {
@@ -53,7 +52,6 @@ chrome.tabs.onUpdated.addListener((tabId, changed) => {
   if (!connections.has(tabId) || changed.status != "loading") {
     return;
   }
-  console.log('inject script');
   chrome.tabs.executeScript(tabId, {
     file: '/content.js',
     runAt: 'document_start'

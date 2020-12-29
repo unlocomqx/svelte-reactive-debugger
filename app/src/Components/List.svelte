@@ -1,6 +1,10 @@
 <script>
   import { TableSort } from "svelte-tablesort";
   import { store } from "../store";
+
+  function time(ms) {
+    return new Date(ms).toISOString().slice(11, -1);
+  }
 </script>
 
 <TableSort items={$store}>
