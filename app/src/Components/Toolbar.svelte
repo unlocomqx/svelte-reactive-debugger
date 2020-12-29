@@ -7,7 +7,7 @@
 </script>
 
 <div class="toolbar">
-  <button on:click={clearAll} class="icon delete"></button>
+  <button on:click={clearAll} class="icon delete" title="Clear all"></button>
   <div class="divider"></div>
   <input type="checkbox" id="group_statements" bind:checked={$ui_store.group_statements}/>
   <label style="position: relative; top: -1px;" for="group_statements">Group statements</label>
@@ -24,6 +24,6 @@
     display: inline-block;
     border-left: 1px solid #3a3a3a;
     height: 20px;
-    padding: 0 3px;
+    margin: 0 3px;
   }
 </style>
