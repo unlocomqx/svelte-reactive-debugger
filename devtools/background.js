@@ -53,7 +53,7 @@ chrome.tabs.onUpdated.addListener((tabId, changed) => {
     return;
   }
   chrome.tabs.executeScript(tabId, {
-    file: '/content.js',
+    file: '/devtools/content.js',
     runAt: 'document_start'
   })
 });

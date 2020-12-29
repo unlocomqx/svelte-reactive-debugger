@@ -38,8 +38,7 @@ export default {
     sourcemap: true,
     format: "iife",
     name: "app",
-    file: "public/build/bundle.js",
-    external: ["chrome"],
+    file: "../dist/build/bundle.js",
     globals: {chrome: "chrome"},
   },
   plugins: [
@@ -70,7 +69,7 @@ export default {
 
     // Watch the `public` directory and refresh the
     // browser on changes when not in production
-    !production && livereload("public"),
+    !production && livereload("../dist"),
 
     // If we're building for production (npm run build
     // instead of npm run dev), minify

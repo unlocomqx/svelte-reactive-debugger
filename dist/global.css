@@ -1,0 +1,77 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #3a3a3a;
+}
+
+body.dark {
+  background-color: rgb(42, 42, 46);
+  color: rgb(177, 177, 179);
+  scrollbar-color: rgb(115, 115, 115) rgb(60, 60, 61);
+}
+
+table.tablesort {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid rgb(205 205 205 / 100%);
+}
+
+body.dark table.tablesort {
+  border: 1px solid #3a3a3a;
+}
+
+table.tablesort th, table.tablesort td {
+  padding: 3px 5px;
+}
+
+table.tablesort th {
+  text-align: left;
+  white-space: pre;
+  border-bottom: 1px solid rgb(205 205 205 / 100%);
+}
+
+body.dark table.tablesort th {
+  border-bottom: 1px solid #3a3a3a;
+}
+
+table.tablesort th::after {
+  content: '  ';
+  white-space: pre;
+}
+
+table.tablesort th.ascending::after {
+  content: ' \2191';
+}
+
+table.tablesort th.descending::after {
+  content: ' \2193';
+}
+
+table.tablesort tbody tr:nth-child(even) {
+  background-color: rgb(245 245 245 / 100%);
+}
+
+body.dark table.tablesort tbody tr:nth-child(even) {
+  background-color: rgb(36 36 36 / 100%);
+}
+
+.icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background-color: transparent;
+  background-image: url(./icons/largeIcons.svg);
+  cursor: pointer;
+  outline: none;
+}
+
+.icon.delete {
+  background-position: 0px 144px;
+  width: 28px;
+  height: 24px;
+}
