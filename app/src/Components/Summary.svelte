@@ -2,8 +2,9 @@
   import { fade } from "svelte/transition";
   import { store } from "../store";
   import { TableSort } from "svelte-tablesort";
+  import Statement from "./Statement.svelte";
 
-  $: statements = groupStatements($store)
+  $: statements = groupStatements($store);
 
   function groupStatements(events) {
     let statements = new Map();
@@ -36,11 +37,11 @@
     <TableSort items={Array.from(statements.values())}>
       <tr slot="thead">
         <th data-sort="statement">Statements</th>
-        <th data-sort="count">Count</th>
-        <th data-sort="duration">Duration</th>
+        <th data-sort="count" style="width: 100px">Count</th>
+        <th data-sort="duration" style="width: 100px">Duration</th>
       </tr>
       <tr slot="tbody" let:item={item}>
-        <td>{item.statement}</td>
+        <td><Statement statement={item.statement}/></td>
         <td>
           {#key item.count}
             <div in:fade={{duration: 100}}>{item.count}</div>

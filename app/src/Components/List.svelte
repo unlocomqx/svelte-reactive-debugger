@@ -2,6 +2,7 @@
   import { TableSort } from "svelte-tablesort";
   import { store } from "../store";
   import { fade } from "svelte/transition";
+  import Statement from "./Statement.svelte";
 
   function time(ms) {
     return new Date(ms).toISOString().slice(11, -1);
@@ -13,11 +14,11 @@
     <TableSort items={$store}>
       <tr slot="thead">
         <th data-sort="statement">Statement</th>
-        <th data-sort="duration">Duration</th>
-        <th data-sort="start_time">Start time</th>
+        <th data-sort="duration" style="width: 100px;">Duration</th>
+        <th data-sort="start_time" style="width: 100px;">Start time</th>
       </tr>
       <tr slot="tbody" let:item={item}>
-        <td>{item.statement}</td>
+        <td><Statement statement={item.statement}/> </td>
         <td>{item.duration}</td>
         <td>{time(item.start_time)}</td>
       </tr>
