@@ -1,0 +1,24 @@
+{
+  "name": "svelte-reactive-debugger",
+  "version": "0.0.1",
+  "description": "Easily monitor svelte reactive statements",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm run dev --prefix app",
+    "package": "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --pack-extension=extension --pack-extension-key=extension.pem"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unlocomqx/svelte-reactive-debugger.git"
+  },
+  "keywords": [
+    "svelte",
+    "extension"
+  ],
+  "author": "unlocomqx",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/unlocomqx/svelte-reactive-debugger/issues"
+  },
+  "homepage": "https://github.com/unlocomqx/svelte-reactive-debugger#readme"
+}
