@@ -50,6 +50,8 @@ table.tablesort tbody tr:nth-child(even) {
   border: none;
   background-color: transparent;
   background-image: url(./icons/largeIcons.svg);
+  cursor: pointer;
+  outline: none;
 }
 
 .icon.delete {

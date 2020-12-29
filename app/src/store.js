@@ -20,3 +20,15 @@ function createStore() {
 }
 
 export const store = createStore();
+
+function createUiStore() {
+  const {subscribe} = writable({
+    group_statements: true,
+  });
+
+  return {
+    subscribe,
+  };
+}
+
+export const ui_store = createUiStore();
