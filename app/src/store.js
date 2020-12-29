@@ -1,4 +1,5 @@
 import { writable } from "svelte/store";
+import { writable as localStorageWritable } from "svelte-local-storage-store";
 
 function createStore() {
   const {subscribe, update, set} = writable([]);
@@ -21,15 +22,6 @@ function createStore() {
 
 export const store = createStore();
 
-function createUiStore() {
-  const {subscribe, set} = writable({
-    group_statements: true,
-  });
-
-  return {
-    subscribe,
-    set,
-  };
-}
-
-export const ui_store = createUiStore();
+export const ui_store = localStorageWritable('svrxd_prefs', {
+  group_statements: true,
+});

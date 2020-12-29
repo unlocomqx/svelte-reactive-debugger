@@ -1,5 +1,6 @@
 dependencies:
   sirv-cli: 1.0.10
+  svelte-local-storage-store: 0.1.4
   svelte-tablesort: 1.1.0
 devDependencies:
   '@rollup/plugin-commonjs': 16.0.0_rollup@2.35.1
@@ -651,6 +652,10 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==
+  /svelte-local-storage-store/0.1.4:
+    dev: false
+    resolution:
+      integrity: sha512-XlSJqMdV1UAROsKHYQSKwI9xU0u8En/nQ6ti2flmUhBA0PM+oqXjvCyM2849ONb5JbrpyUO18CwXcSJgxYCR8w==
   /svelte-tablesort/1.1.0:
     dependencies:
       generator-sort: 1.0.0
@@ -714,4 +719,5 @@ specifiers:
   rollup-plugin-terser: ^7.0.0
   sirv-cli: ^1.0.0
   svelte: ^3.0.0
+  svelte-local-storage-store: ^0.1.4
   svelte-tablesort: ^1.1.0
