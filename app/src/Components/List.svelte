@@ -14,13 +14,16 @@
     <TableSort items={$store}>
       <tr slot="thead">
         <th data-sort="statement">Statement</th>
-        <th data-sort="duration" style="width: 100px;">Duration</th>
-        <th data-sort="start_time" style="width: 100px;">Start time</th>
+        <th data-sort="duration">Duration</th>
+        <th data-sort="start_time">Start time</th>
       </tr>
       <tr slot="tbody" let:item={item}>
-        <td><Statement statement={item.statement}/> </td>
+        <td style="display:grid;">
+          <Statement statement={item.statement}/>
+        </td>
         <td>{item.duration}</td>
         <td>{time(item.start_time)}</td>
       </tr>
     </TableSort>
-  </div>{/if}
+  </div>
+{/if}

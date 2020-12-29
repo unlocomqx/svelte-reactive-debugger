@@ -37,11 +37,13 @@
     <TableSort items={Array.from(statements.values())}>
       <tr slot="thead">
         <th data-sort="statement">Statements</th>
-        <th data-sort="count" style="width: 100px">Count</th>
-        <th data-sort="duration" style="width: 100px">Duration</th>
+        <th data-sort="count">Count</th>
+        <th data-sort="duration">Duration</th>
       </tr>
       <tr slot="tbody" let:item={item}>
-        <td><Statement statement={item.statement}/></td>
+        <td style="display: grid">
+          <Statement statement={item.statement}/>
+        </td>
         <td>
           {#key item.count}
             <div in:fade={{duration: 100}}>{item.count}</div>
@@ -50,4 +52,5 @@
         <td>{item.duration}</td>
       </tr>
     </TableSort>
-  </div>{/if}
+  </div>
+{/if}
