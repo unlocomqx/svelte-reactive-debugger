@@ -39,7 +39,7 @@
       </tr>
       <tr slot="tbody" let:item={item}>
         <td style="display: grid">
-          <Statement statement={item.statement}/>
+          <Statement statement={item.statement} filename={item.filename} line={item.line}/>
         </td>
         <td>
           {#key item.count}

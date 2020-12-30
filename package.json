@@ -20,5 +20,11 @@
   "bugs": {
     "url": "https://github.com/unlocomqx/svelte-reactive-debugger/issues"
   },
-  "homepage": "https://github.com/unlocomqx/svelte-reactive-debugger#readme"
+  "homepage": "https://github.com/unlocomqx/svelte-reactive-debugger#readme",
+  "devDependencies": {
+    "@types/chrome": "^0.0.127"
+  },
+  "dependencies": {
+    "copy-to-clipboard": "^3.3.1"
+  }
 }

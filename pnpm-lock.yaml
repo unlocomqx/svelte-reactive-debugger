@@ -1,0 +1,40 @@
+dependencies:
+  copy-to-clipboard: 3.3.1
+devDependencies:
+  '@types/chrome': 0.0.127
+lockfileVersion: 5.2
+packages:
+  /@types/chrome/0.0.127:
+    dependencies:
+      '@types/filesystem': 0.0.29
+      '@types/har-format': 1.2.5
+    dev: true
+    resolution:
+      integrity: sha512-hBB9EApLYKKn2GvklVkTxVP6vZvxsH9okyIRUinNtMzZHIgIKWQk/ESbX+O5g4Bihfy38+aFGn7Kl7Cxou5JUg==
+  /@types/filesystem/0.0.29:
+    dependencies:
+      '@types/filewriter': 0.0.28
+    dev: true
+    resolution:
+      integrity: sha512-85/1KfRedmfPGsbK8YzeaQUyV1FQAvMPMTuWFQ5EkLd2w7szhNO96bk3Rh/SKmOfd9co2rCLf0Voy4o7ECBOvw==
+  /@types/filewriter/0.0.28:
+    dev: true
+    resolution:
+      integrity: sha1-wFTor02d11205jq8dviFFocU1LM=
+  /@types/har-format/1.2.5:
+    dev: true
+    resolution:
+      integrity: sha512-IG8AE1m2pWtPqQ7wXhFhy6Q59bwwnLwO36v5Rit2FrbXCIp8Sk8E2PfUCreyrdo17STwFSKDAkitVuVYbpEHvQ==
+  /copy-to-clipboard/3.3.1:
+    dependencies:
+      toggle-selection: 1.0.6
+    dev: false
+    resolution:
+      integrity: sha512-i13qo6kIHTTpCm8/Wup+0b1mVWETvu2kIMzKoK8FpkLkFxlt0znUAHcMzox+T8sPlqtZXq3CulEjQHsYiGFJUw==
+  /toggle-selection/1.0.6:
+    dev: false
+    resolution:
+      integrity: sha1-bkWxJj8gF/oKzH2J14sVuL932jI=
+specifiers:
+  '@types/chrome': ^0.0.127
+  copy-to-clipboard: ^3.3.1
