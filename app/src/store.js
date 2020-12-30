@@ -24,7 +24,6 @@ export const store = createStore();
 
 function createUiStore() {
   const {subscribe, update} = localStorageWritable("svrxd_prefs", {
-    debugger_enabled: false,
     group_statements: false,
     preserve_log: false,
   });
@@ -42,3 +41,22 @@ function createUiStore() {
 }
 
 export const ui_store = createUiStore();
+
+
+function createDbgStore() {
+  const {subscribe, update} = writable({
+    debugger_enabled: false,
+  });
+
+  return {
+    subscribe,
+
+    setProp(name, value) {
+      return update(state => {
+        state[name] = value;
+        return state;
+      });
+    },
+  };
+}
+export const dbg_store = createDbgStore();
