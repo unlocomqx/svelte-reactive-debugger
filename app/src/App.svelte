@@ -6,10 +6,23 @@
 </script>
 
 <div>
-  <Toolbar/>
-  {#if $ui_store.group_statements}
-    <Summary/>
+  {#if $ui_store.debugger_enabled}
+    <Toolbar/>
+    {#if $ui_store.group_statements}
+      <Summary/>
+    {:else}
+      <List/>
+    {/if}
   {:else}
-    <List/>
+    <div style="text-align: center; padding: 15px;">
+      <div>
+        RXD Debugger not detected, follow the steps described here to enable it
+      </div>
+      <div>
+        <a href="https://github.com/unlocomqx/svelte-rxd-preprocessor" target="_blank">
+          https://github.com/unlocomqx/svelte-rxd-preprocessor
+        </a>
+      </div>
+    </div>
   {/if}
 </div>

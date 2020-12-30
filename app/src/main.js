@@ -25,6 +25,10 @@ backgroundPort.postMessage({
 });
 
 backgroundPort.onMessage.addListener(function (request) {
+	if (request.type === "DebuggerDetected") {
+		$ui_store.debugger_enabled = true;
+	}
+
 	if (request.type === "SvelteReactiveEnd") {
 		const now = Date.now();
 		const duration = now - request.detail.start_time;
@@ -33,6 +37,7 @@ backgroundPort.onMessage.addListener(function (request) {
 			duration,
 		});
 	}
+
 	if (request.type === "Reload" && !prefs.preserve_log) {
 		store.clear();
 	}

@@ -76,3 +76,7 @@ body.dark table.tablesort tbody tr:nth-child(even) {
   width: 28px;
   height: 24px;
 }
+
+a {
+  color: #2196f3;
+}
