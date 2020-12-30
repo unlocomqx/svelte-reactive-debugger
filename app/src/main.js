@@ -47,8 +47,6 @@ backgroundPort.onMessage.addListener(function (request) {
   }
 });
 
-const app = new App({
+new App({
   target: document.body
 });
-
-export default app;
