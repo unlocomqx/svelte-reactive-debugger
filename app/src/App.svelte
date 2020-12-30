@@ -16,7 +16,7 @@
   {:else}
     <div style="text-align: center; padding: 15px;">
       <div>
-        RXD Debugger not detected, follow the steps described here to enable it
+        Svelte RXD not detected, follow the steps described here to enable it
       </div>
       <div>
         <a href="https://github.com/unlocomqx/svelte-rxd-preprocessor" target="_blank">
