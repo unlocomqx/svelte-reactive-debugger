@@ -13,16 +13,13 @@
       if (statements.has(eventId)) {
         const info = statements.get(eventId);
         statements.set(eventId, {
-          id: eventId,
-          statement: event.statement,
+          ...event,
           duration: info.duration + event.duration,
           count: info.count + 1,
         });
       } else {
         statements.set(eventId, {
-          id: eventId,
-          statement: event.statement,
-          duration: event.duration,
+          ...event,
           count: 1,
         });
       }
