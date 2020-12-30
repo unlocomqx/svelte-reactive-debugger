@@ -23,13 +23,14 @@ function createStore() {
 export const store = createStore();
 
 function createUiStore() {
-  const {subscribe, update} = localStorageWritable("svrxd_prefs", {
+  const {subscribe, update, set} = localStorageWritable("svrxd_prefs", {
     group_statements: false,
     preserve_log: false,
   });
 
   return {
     subscribe,
+    set,
 
     setPref(name, value) {
       return update(state => {
