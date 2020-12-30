@@ -6,6 +6,11 @@ document.addEventListener("SvelteReactiveEnd", function (ev) {
   post("SvelteReactiveEnd", ev.detail);
 });
 
+console.log('SvelteReactiveEnable');
+document.addEventListener("SvelteReactiveEnable", function () {
+  post("SvelteReactiveEnable");
+});
+
 function post(type, detail) {
   if (typeof chrome.app.isInstalled !== "undefined") {
     chrome.runtime.sendMessage({
@@ -15,13 +20,4 @@ function post(type, detail) {
   }
 }
 
-if (typeof chrome.app.isInstalled !== "undefined") {
-  if (window.rxd_debugger) {
-    chrome.runtime.sendMessage({
-      type: "DebuggerDetected",
-    });
-  }
-  chrome.runtime.sendMessage({
-    type: "Reload",
-  });
-}
+post("Reload");

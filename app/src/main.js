@@ -25,8 +25,8 @@ backgroundPort.postMessage({
 });
 
 backgroundPort.onMessage.addListener(function (request) {
-	if (request.type === "DebuggerDetected") {
-		$ui_store.debugger_enabled = true;
+	if (request.type === "SvelteReactiveEnable") {
+		ui_store.setPref('debugger_enabled', true);
 	}
 
 	if (request.type === "SvelteReactiveEnd") {
