@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "npm run dev --prefix app",
-    "package": "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --pack-extension=extension --pack-extension-key=extension.pem"
+    "package": "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --pack-extension=extension --pack-extension-key=extension.pem",
+    "zip": "npm run build --prefix app && zip -r extension.zip extension/*"
   },
   "repository": {
     "type": "git",
