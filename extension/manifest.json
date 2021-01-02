@@ -1,6 +1,6 @@
 {
   "name": "Svelte Reactive Debugger",
-  "version": "0.1",
+  "version": "0.2",
   "description": "Monitor svelte reactive statements",
   "devtools_page": "devtools/devtools.html",
   "web_accessible_resources": ["devtools/content.js"],
