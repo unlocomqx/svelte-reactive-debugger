@@ -1,6 +1,9 @@
 # Svelte Reactive Debugger
 Easily monitor svelte reactive statements
 
+This extension needs this custom preprocessor to work
+https://github.com/unlocomqx/svelte-rxd-preprocessor
+
 ## List
 The extension displays the statements as they are executed
 
