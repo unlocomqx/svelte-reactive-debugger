@@ -2,9 +2,11 @@
 Easily monitor svelte reactive statements
 
 ## List
-![panel preview](images/list.jpg)
 The extension displays the statements as they are executed
 
+![panel preview](images/list.jpg)
+
 ## Summary
-![panel preview](images/summary.jpg)
 The statements are grouped to show the total count and duration of each statement
+
+![panel preview](images/summary.jpg)
