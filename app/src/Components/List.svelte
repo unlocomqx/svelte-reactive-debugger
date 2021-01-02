@@ -9,19 +9,26 @@
     return new Date(ms).toISOString().slice(11, -1);
   }
 
-  let sort: Sort = $ui_store?.sort?.summary ?? {
+  let sort: Sort
+  $: sort = $ui_store?.sort?.list ?? {
     name: "start_time",
-    dir : "descending",
+    direction : "descending",
   };
+
+  function saveSort (ev) {
+    $ui_store.sort = $ui_store.sort || {};
+    $ui_store.sort.list = ev.detail;
+    console.log($ui_store.sort);
+  }
 </script>
 
 {#if $store.length > 0}
   <div in:fade={{duration: 100}}>
-    <TableSort items={$store}>
+    <TableSort items={$store} on:sort={saveSort}>
       <tr slot="thead">
-        <th data-sort="statement" data-sort-initial={sort.name === 'statement' ? sort.dir : null}>Statement</th>
-        <th data-sort="duration" data-sort-initial={sort.name === 'duration' ? sort.dir : null}>Duration</th>
-        <th data-sort="start_time" data-sort-initial={sort.name === 'start_time' ? sort.dir : null}>Start time</th>
+        <th data-sort="statement" data-sort-initial={sort.name === 'statement' ? sort.direction : null}>Statement</th>
+        <th data-sort="duration" data-sort-initial={sort.name === 'duration' ? sort.direction : null}>Duration</th>
+        <th data-sort="start_time" data-sort-initial={sort.name === 'start_time' ? sort.direction : null}>Start time</th>
       </tr>
       <tr slot="tbody" let:item={item}>
         <td style="display:grid;">

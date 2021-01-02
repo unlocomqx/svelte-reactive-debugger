@@ -29,19 +29,26 @@
     return statements;
   }
 
-  let sort: Sort = $ui_store?.sort?.summary ?? {
-    name: "count",
-    dir : "descending",
+  let sort: Sort;
+  $: sort = $ui_store?.sort?.summary ?? {
+    name     : "count",
+    direction: "descending",
   };
+
+  function saveSort (ev) {
+    $ui_store.sort = $ui_store.sort || {};
+    $ui_store.sort.summary = ev.detail;
+    console.log($ui_store.sort);
+  }
 </script>
 
 {#if statements.size > 0}
   <div in:fade={{duration: 100}}>
-    <TableSort items={Array.from(statements.values())}>
+    <TableSort items={Array.from(statements.values())} on:sort={saveSort}>
       <tr slot="thead">
-        <th data-sort="statement" data-sort-initial={sort.name === 'statement' ? sort.dir : null}>Statements</th>
-        <th data-sort="count" data-sort-initial={sort.name === 'count' ? sort.dir : null}>Count</th>
-        <th data-sort="duration" data-sort-initial={sort.name === 'duration' ? sort.dir : null}>Duration</th>
+        <th data-sort="statement" data-sort-initial={sort.name === 'statement' ? sort.direction : null}>Statements</th>
+        <th data-sort="count" data-sort-initial={sort.name === 'count' ? sort.direction : null}>Count</th>
+        <th data-sort="duration" data-sort-initial={sort.name === 'duration' ? sort.direction : null}>Duration</th>
       </tr>
       <tr slot="tbody" let:item={item}>
         <td style="display: grid">

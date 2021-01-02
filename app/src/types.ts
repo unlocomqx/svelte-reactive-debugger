@@ -11,7 +11,7 @@ export interface ReactiveEvent {
 
 export type Sort = {
   name: "statement" | "count" | "duration" | "start_time";
-  dir: "ascending" | "descending";
+  direction: "ascending" | "descending";
 };
 
 export interface UiStoreData {
