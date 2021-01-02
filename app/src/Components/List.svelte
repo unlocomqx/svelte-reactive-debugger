@@ -18,7 +18,6 @@
   function saveSort (ev) {
     $ui_store.sort = $ui_store.sort || {};
     $ui_store.sort.list = ev.detail;
-    console.log($ui_store.sort);
   }
 </script>
 
