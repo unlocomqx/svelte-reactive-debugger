@@ -49,7 +49,7 @@ chrome.runtime.onMessage.addListener(function (request, sender) {
 });
 
 chrome.tabs.onUpdated.addListener((tabId, changed) => {
-  if (!connections.has(tabId) || changed.status != "loading") {
+  if (!connections.has(tabId) || changed.status != "loading" || changed.url) {
     return;
   }
   chrome.tabs.executeScript(tabId, {

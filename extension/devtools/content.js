@@ -6,7 +6,6 @@ document.addEventListener("SvelteReactiveEnd", function (ev) {
   post("SvelteReactiveEnd", ev.detail);
 });
 
-console.log('SvelteReactiveEnable');
 document.addEventListener("SvelteReactiveEnable", function () {
   post("SvelteReactiveEnable");
 });

@@ -46,6 +46,7 @@ export const ui_store = createUiStore();
 
 function createDbgStore() {
   const {subscribe, update} = writable({
+    tab_connected: false,
     debugger_enabled: false,
   });
 

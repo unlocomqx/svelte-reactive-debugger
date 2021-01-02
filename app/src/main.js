@@ -30,6 +30,7 @@ backgroundPort.postMessage({
 
 backgroundPort.onMessage.addListener(function (request) {
   if (request.type === "SvelteReactiveEnable") {
+    dbg_store.setProp("tab_connected", true);
     dbg_store.setProp("debugger_enabled", true);
   }
 
@@ -42,8 +43,10 @@ backgroundPort.onMessage.addListener(function (request) {
     });
   }
 
-  if (request.type === "Reload" && !prefs.preserve_log) {
-    store.clear();
+  if (request.type === "Reload") {
+    if (!prefs.preserve_log) {
+      store.clear();
+    }
   }
 });
 

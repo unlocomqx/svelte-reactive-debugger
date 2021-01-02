@@ -1,5 +1,5 @@
 <script>
-  import { ui_store } from "./store";
+  import { ui_store, dbg_store } from "./store";
   import Summary from "./Components/Summary.svelte";
   import Toolbar from "./Components/Toolbar.svelte";
   import List from "./Components/List.svelte";
@@ -8,10 +8,16 @@
 <div>
   {#if $ui_store.debugger_enabled}
     <Toolbar/>
-    {#if $ui_store.group_statements}
-      <Summary/>
+    {#if !$dbg_store.tab_connected}
+      <p style="text-align: center;">
+        Reload the page to connect to the svelte reactive debugger
+      </p>
     {:else}
-      <List/>
+      {#if $ui_store.group_statements}
+        <Summary/>
+      {:else}
+        <List/>
+      {/if}
     {/if}
   {:else}
     <div style="text-align: center; padding: 15px;">
