@@ -1,11 +1,11 @@
 <script lang="ts">
   import { TableSort } from "svelte-tablesort";
   import { fade } from "svelte/transition";
-  import { store, ui_store } from "../store";
+  import { ev_store, ui_store } from "../store";
   import type { Sort } from "../types";
   import Statement from "./Statement.svelte";
 
-  $: statements = groupStatements($store);
+  $: statements = groupStatements($ev_store);
 
   function groupStatements (events) {
     let statements = new Map();

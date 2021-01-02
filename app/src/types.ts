@@ -5,8 +5,14 @@ export interface ReactiveEvent {
   statement: string;
   filename: string;
   line: number;
+  state: {},
   start_time: number;
   duration: number;
+}
+
+export interface EventStore extends Readable<ReactiveEvent[]> {
+  insertEvent (ev: ReactiveEvent);
+  clear ();
 }
 
 export type Sort = {

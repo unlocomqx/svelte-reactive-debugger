@@ -1,8 +1,8 @@
 <script>
-  import { store, ui_store } from "../store";
+  import { ev_store, ui_store } from "../store";
 
   function clearAll() {
-    store.clear();
+    ev_store.clear();
   }
 </script>
 

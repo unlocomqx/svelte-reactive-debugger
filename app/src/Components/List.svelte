@@ -1,7 +1,7 @@
 <script lang="ts">
   import { TableSort } from "svelte-tablesort";
-  import { store, ui_store } from "../store";
   import { fade } from "svelte/transition";
+  import { ev_store, ui_store } from "../store";
   import type { Sort } from "../types";
   import Statement from "./Statement.svelte";
 
@@ -22,9 +22,9 @@
   }
 </script>
 
-{#if $store.length > 0}
+{#if $ev_store.length > 0}
   <div in:fade={{duration: 100}}>
-    <TableSort items={$store} on:sort={saveSort}>
+    <TableSort items={$ev_store} on:sort={saveSort}>
       <tr slot="thead">
         <th data-sort="statement" data-sort-initial={sort.name === 'statement' ? sort.direction : null}>Statement</th>
         <th data-sort="duration" data-sort-initial={sort.name === 'duration' ? sort.direction : null}>Duration</th>

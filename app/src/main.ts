@@ -1,7 +1,7 @@
 import { devtools } from "chrome";
 import { get } from "svelte/store";
 import App from "./App.svelte";
-import { dbg_store, store, ui_store } from "./store";
+import { dbg_store, ev_store, ui_store } from "./store";
 
 const prefs = get(ui_store);
 
@@ -37,7 +37,7 @@ backgroundPort.onMessage.addListener(function (request) {
   if (request.type === "SvelteReactiveEnd") {
     const now = Date.now();
     const duration = now - request.detail.start_time;
-    store.insertEvent({
+    ev_store.insertEvent({
       ...request.detail,
       duration,
     });
@@ -45,7 +45,7 @@ backgroundPort.onMessage.addListener(function (request) {
 
   if (request.type === "Reload") {
     if (!prefs.preserve_log) {
-      store.clear();
+      ev_store.clear();
     }
   }
 });
