@@ -7,7 +7,7 @@
 </script>
 
 <div class="toolbar">
-  <button on:click={clearAll} class="icon delete" title="Clear all"></button>
+  <button on:click={clearAll} class="icon delete" title="Clear all" style="position: relative; top: -1px;"></button>
 
   <div class="divider"></div>
 
