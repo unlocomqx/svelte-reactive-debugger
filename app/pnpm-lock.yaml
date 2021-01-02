@@ -1,7 +1,7 @@
 dependencies:
   sirv-cli: 1.0.10
   svelte-local-storage-store: 0.1.4
-  svelte-tablesort: 1.1.0
+  svelte-tablesort: github.com/unlocomqx/svelte-tablesort/186af509744356293e3afcb3b7561b005557d0c6
 devDependencies:
   '@rollup/plugin-commonjs': 16.0.0_rollup@2.35.1
   '@rollup/plugin-node-resolve': 10.0.0_rollup@2.35.1
@@ -841,12 +841,6 @@ packages:
     requiresBuild: true
     resolution:
       integrity: sha512-s7KdhR2pOsffyOzZIMEb315f6pfgeDnOWN47m6YKFeSEx3NMf/79Znc3vuG/Ai79SL/vsi86WDrjFPLGRfDesg==
-  /svelte-tablesort/1.1.0:
-    dependencies:
-      generator-sort: 1.0.0
-    dev: false
-    resolution:
-      integrity: sha512-nSuXJGH1lPQfolL4xXPys/N4CCtu+ED+3X+YRuZJBRtK975vcNQYBTfpOUd+M6BHGGKSrK7iD4FTh7iCSp2eKQ==
   /svelte/3.31.0:
     dev: true
     engines:
@@ -905,6 +899,14 @@ packages:
     dev: true
     resolution:
       integrity: sha512-GIyAXC2cB7LjvpgMt9EKS2ldqr0MTrORaleiOno6TweZ6r3TKtoFQWay/2PceJ3RuBasOHzXNn5Lrw1X0bEjqA==
+  github.com/unlocomqx/svelte-tablesort/186af509744356293e3afcb3b7561b005557d0c6:
+    dependencies:
+      generator-sort: 1.0.0
+    dev: false
+    name: svelte-tablesort
+    resolution:
+      tarball: 'https://codeload.github.com/unlocomqx/svelte-tablesort/tar.gz/186af509744356293e3afcb3b7561b005557d0c6'
+    version: 1.1.0
 specifiers:
   '@rollup/plugin-commonjs': ^16.0.0
   '@rollup/plugin-node-resolve': ^10.0.0
@@ -920,6 +922,6 @@ specifiers:
   svelte-check: ^1.0.0
   svelte-local-storage-store: ^0.1.4
   svelte-preprocess: ^4.0.0
-  svelte-tablesort: ^1.1.0
+  svelte-tablesort: 'github:unlocomqx/svelte-tablesort'
   tslib: ^2.0.0
   typescript: ^3.9.3
