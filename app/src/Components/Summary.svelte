@@ -1,6 +1,6 @@
 <script>
   import { fade } from "svelte/transition";
-  import { store } from "../store";
+  import { store ,ui_store} from "../store";
   import { TableSort } from "svelte-tablesort";
   import Statement from "./Statement.svelte";
 
@@ -27,15 +27,17 @@
 
     return statements;
   }
+
+  let sort = $ui_store.sort.summary;
 </script>
 
 {#if statements.size > 0}
   <div in:fade={{duration: 100}}>
     <TableSort items={Array.from(statements.values())}>
       <tr slot="thead">
-        <th data-sort="statement">Statements</th>
-        <th data-sort="count">Count</th>
-        <th data-sort="duration">Duration</th>
+        <th data-sort="statement" data-table-sort={sort.name === 'statement' ? sort.dir : null}>Statements</th>
+        <th data-sort="count" data-table-sort={sort.name === 'count' ? sort.dir : null}>Count</th>
+        <th data-sort="duration" data-table-sort={sort.name === 'duration' ? sort.dir : null}>Duration</th>
       </tr>
       <tr slot="tbody" let:item={item}>
         <td style="display: grid">

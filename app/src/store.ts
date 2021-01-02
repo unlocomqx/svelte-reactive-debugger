@@ -27,6 +27,16 @@ function createUiStore () {
   const { subscribe, update, set } = localStorageWritable("svrxd_prefs", {
     group_statements: false,
     preserve_log    : false,
+    sort: {
+      list: {
+        name: 'statement',
+        dir: 'ascending',
+      },
+      summary: {
+        name: 'statement',
+        dir: 'ascending',
+      },
+    }
   });
 
   return {
