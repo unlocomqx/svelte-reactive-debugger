@@ -9,9 +9,17 @@ export interface ReactiveEvent {
   duration: number;
 }
 
+export type Sort = {
+  name: "statement" | "count" | "duration" | "start_time";
+  dir: "ascending" | "descending";
+};
+
 export interface UiStoreData {
   group_statements: boolean;
   preserve_log: boolean;
+  sort: {
+    [name in "list" | "summary"]: Sort
+  }
 }
 
 export interface UiStore extends Writable<UiStoreData> {

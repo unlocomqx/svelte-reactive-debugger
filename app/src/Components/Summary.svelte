@@ -1,12 +1,13 @@
-<script>
-  import { fade } from "svelte/transition";
-  import { store ,ui_store} from "../store";
+<script lang="ts">
   import { TableSort } from "svelte-tablesort";
+  import { fade } from "svelte/transition";
+  import { store, ui_store } from "../store";
+  import type { Sort } from "../types";
   import Statement from "./Statement.svelte";
 
   $: statements = groupStatements($store);
 
-  function groupStatements(events) {
+  function groupStatements (events) {
     let statements = new Map();
     events.forEach(event => {
       let eventId = event.id;
@@ -15,7 +16,7 @@
         statements.set(eventId, {
           ...event,
           duration: info.duration + event.duration,
-          count: info.count + 1,
+          count   : info.count + 1,
         });
       } else {
         statements.set(eventId, {
@@ -28,16 +29,20 @@
     return statements;
   }
 
-  let sort = $ui_store.sort.summary;
+  let sort: Sort = $ui_store?.sort?.summary ?? {
+    name: "count",
+    dir : "descending",
+  };
+  console.log(sort);
 </script>
 
 {#if statements.size > 0}
   <div in:fade={{duration: 100}}>
     <TableSort items={Array.from(statements.values())}>
       <tr slot="thead">
-        <th data-sort="statement" data-table-sort={sort.name === 'statement' ? sort.dir : null}>Statements</th>
-        <th data-sort="count" data-table-sort={sort.name === 'count' ? sort.dir : null}>Count</th>
-        <th data-sort="duration" data-table-sort={sort.name === 'duration' ? sort.dir : null}>Duration</th>
+        <th data-sort="statement" data-sort-initial={sort.name === 'statement' ? sort.dir : null}>Statements</th>
+        <th data-sort="count" data-sort-initial={sort.name === 'count' ? sort.dir : null}>Count</th>
+        <th data-sort="duration" data-sort-initial={sort.name === 'duration' ? sort.dir : null}>Duration</th>
       </tr>
       <tr slot="tbody" let:item={item}>
         <td style="display: grid">

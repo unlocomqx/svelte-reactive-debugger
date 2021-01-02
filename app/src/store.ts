@@ -25,16 +25,16 @@ export const store = createStore();
 
 function createUiStore () {
   const { subscribe, update, set } = localStorageWritable("svrxd_prefs", {
-    group_statements: false,
+    group_statements: true,
     preserve_log    : false,
     sort: {
       list: {
-        name: 'statement',
-        dir: 'ascending',
+        name: 'duration',
+        dir: 'descending',
       },
       summary: {
-        name: 'statement',
-        dir: 'ascending',
+        name: 'count',
+        dir: 'descending',
       },
     }
   });
