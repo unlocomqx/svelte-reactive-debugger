@@ -33,7 +33,6 @@
     name: "count",
     dir : "descending",
   };
-  console.log(sort);
 </script>
 
 {#if statements.size > 0}

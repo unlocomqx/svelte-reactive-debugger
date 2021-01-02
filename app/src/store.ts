@@ -29,7 +29,7 @@ function createUiStore () {
     preserve_log    : false,
     sort: {
       list: {
-        name: 'duration',
+        name: 'start_time',
         dir: 'descending',
       },
       summary: {
