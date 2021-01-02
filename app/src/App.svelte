@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { ui_store, dbg_store } from "./store";
   import Summary from "./Components/Summary.svelte";
   import Toolbar from "./Components/Toolbar.svelte";

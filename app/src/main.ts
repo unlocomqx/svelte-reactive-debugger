@@ -1,11 +1,11 @@
 import { devtools } from "chrome";
-import App from "./App.svelte";
 import { get } from "svelte/store";
+import App from "./App.svelte";
 import { dbg_store, store, ui_store } from "./store";
 
 const prefs = get(ui_store);
 
-function setDarkMode(theme) {
+function setDarkMode (theme) {
   if (theme == "dark") {
     document.body.classList.add("dark");
   } else {
@@ -24,7 +24,7 @@ var backgroundPort = chrome.runtime.connect({
 });
 
 backgroundPort.postMessage({
-  name: "init",
+  name : "init",
   tabId: chrome.devtools.inspectedWindow.tabId
 });
 

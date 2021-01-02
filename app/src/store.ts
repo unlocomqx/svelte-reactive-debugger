@@ -1,20 +1,21 @@
-import { writable } from "svelte/store";
 import { writable as localStorageWritable } from "svelte-local-storage-store";
+import { writable } from "svelte/store";
+import type { DbgStore, UiStore } from "./types";
 
-function createStore() {
-  const {subscribe, update, set} = writable([]);
+function createStore () {
+  const { subscribe, update, set } = writable([]);
 
   return {
     subscribe,
 
-    insertEvent(data) {
+    insertEvent (data) {
       return update(state => {
         state.push(data);
         return state;
       });
     },
 
-    clear() {
+    clear () {
       set([]);
     }
   };
@@ -22,17 +23,18 @@ function createStore() {
 
 export const store = createStore();
 
-function createUiStore() {
-  const {subscribe, update, set} = localStorageWritable("svrxd_prefs", {
+function createUiStore () {
+  const { subscribe, update, set } = localStorageWritable("svrxd_prefs", {
     group_statements: false,
-    preserve_log: false,
+    preserve_log    : false,
   });
 
   return {
     subscribe,
+    update,
     set,
 
-    setPref(name, value) {
+    setPref (name, value) {
       return update(state => {
         state[name] = value;
         return state;
@@ -41,19 +43,19 @@ function createUiStore() {
   };
 }
 
-export const ui_store = createUiStore();
+export const ui_store: UiStore = createUiStore();
 
 
-function createDbgStore() {
-  const {subscribe, update} = writable({
-    tab_connected: false,
+function createDbgStore () {
+  const { subscribe, update } = writable({
+    tab_connected   : false,
     debugger_enabled: false,
   });
 
   return {
     subscribe,
 
-    setProp(name, value) {
+    setProp (name, value) {
       return update(state => {
         state[name] = value;
         return state;
@@ -61,4 +63,4 @@ function createDbgStore() {
     },
   };
 }
-export const dbg_store = createDbgStore();
+export const dbg_store: DbgStore = createDbgStore();
