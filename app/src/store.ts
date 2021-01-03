@@ -75,10 +75,10 @@ function createDbgStore () {
 export const dbg_store: DbgStore = createDbgStore();
 
 
-function createUiStore () {
+function createUiStore (): UiStore {
   const { subscribe, update } = writable({
-    show_details     : false,
-    show_details_item: null,
+    show_details  : false,
+    inspected_item: null,
   });
 
   return {

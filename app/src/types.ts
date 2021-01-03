@@ -43,7 +43,7 @@ export interface DbgStore extends Readable<DbgStoreData> {
 
 export interface UiStoreData {
   show_details: boolean;
-  show_details_item: ReactiveEvent;
+  inspected_item: ReactiveEvent;
 }
 
 export interface UiStore extends Readable<UiStoreData> {

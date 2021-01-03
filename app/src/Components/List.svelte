@@ -22,7 +22,7 @@
 
   function showDetails (item: ReactiveEvent) {
     $ui_store.show_details = true;
-    $ui_store.show_details_item = item;
+    $ui_store.inspected_item = item;
   }
 </script>
 
