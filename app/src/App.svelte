@@ -1,8 +1,12 @@
 <script lang="ts">
+  import Container from "./Components/Container.svelte";
+  import Details from "./Components/Details.svelte";
+  import LeftPane from "./Components/LeftPane.svelte";
   import List from "./Components/List.svelte";
+  import RightPane from "./Components/RightPane.svelte";
   import Summary from "./Components/Summary.svelte";
   import Toolbar from "./Components/Toolbar.svelte";
-  import { dbg_store, pref_store } from "./store";
+  import { dbg_store, pref_store, ui_store } from "./store";
 </script>
 
 <div>
@@ -13,11 +17,20 @@
         Reload the page to connect to the svelte reactive debugger
       </p>
     {:else}
-      {#if $pref_store.group_statements}
-        <Summary/>
-      {:else}
-        <List/>
-      {/if}
+      <Container>
+        <RightPane>
+          {#if $pref_store.group_statements}
+            <Summary/>
+          {:else}
+            <List/>
+          {/if}
+        </RightPane>
+        <LeftPane>
+          {#if $ui_store.show_details || true}
+            <Details/>
+          {/if}
+        </LeftPane>
+      </Container>
     {/if}
   {:else}
     <div style="text-align: center; padding: 15px;">
