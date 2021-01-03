@@ -1,3 +1,4 @@
+// @ts-ignore
 import { devtools } from "chrome";
 import { get } from "svelte/store";
 import App from "./App.svelte";
