@@ -1,6 +1,6 @@
 import { writable as localStorageWritable } from "svelte-local-storage-store";
 import { writable } from "svelte/store";
-import type { DbgStore, EventStore, PrefStore } from "./types";
+import type { DbgStore, EventStore, PrefStore, UiStore } from "./types";
 
 function createStore () {
   const { subscribe, update, set } = writable([]);
@@ -20,8 +20,8 @@ function createStore () {
     }
   };
 }
-
 export const ev_store: EventStore = createStore();
+
 
 function createPrefStore () {
   const { subscribe, update, set } = localStorageWritable("svrxd_prefs", {
@@ -52,7 +52,6 @@ function createPrefStore () {
     },
   };
 }
-
 export const pref_store: PrefStore = createPrefStore();
 
 
@@ -74,3 +73,23 @@ function createDbgStore () {
   };
 }
 export const dbg_store: DbgStore = createDbgStore();
+
+
+function createUiStore () {
+  const { subscribe, update } = writable({
+    show_details     : false,
+    show_details_item: null,
+  });
+
+  return {
+    subscribe,
+
+    setProp (name, value) {
+      return update(state => {
+        state[name] = value;
+        return state;
+      });
+    },
+  };
+}
+export const ui_store: UiStore = createUiStore();

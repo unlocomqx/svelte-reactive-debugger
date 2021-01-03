@@ -40,3 +40,12 @@ export interface DbgStoreData {
 export interface DbgStore extends Readable<DbgStoreData> {
   setProp (name: string, value: boolean);
 }
+
+export interface UiStoreData {
+  show_details: boolean;
+  show_details_item: ReactiveEvent;
+}
+
+export interface UiStore extends Readable<UiStoreData> {
+  setProp (name: string, value: boolean);
+}
