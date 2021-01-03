@@ -5,7 +5,7 @@ export interface ReactiveEvent {
   statement: string;
   filename: string;
   line: number;
-  state: {},
+  state: string;
   start_time: number;
   duration: number;
 }
