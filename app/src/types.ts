@@ -26,6 +26,7 @@ export interface PrefStoreData {
   sort: {
     [name in "list" | "summary"]: Sort
   }
+  details_width: number;
 }
 
 export interface PrefStore extends Writable<PrefStoreData> {

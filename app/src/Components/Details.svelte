@@ -1,9 +1,12 @@
 <script lang="ts">
-  import { ui_store } from "../store";
+  import { pref_store, ui_store } from "../store";
   import Resize from "./Resize.svelte";
 
   let details_div: HTMLDivElement;
-  let details_width: number;
+  let details_width: number = $pref_store.details_width;
+
+  $: state = $ui_store.inspected_item.state;
+
 </script>
 
 <div id="details" bind:this={details_div} style="width: {details_width}px;">
@@ -11,7 +14,7 @@
     Details
   </div>
   <div id="details-body">
-    {$ui_store.inspected_item}
+    {state}
   </div>
   <Resize {details_div} bind:details_width/>
 </div>

@@ -23,7 +23,7 @@ function createStore () {
 export const ev_store: EventStore = createStore();
 
 
-function createPrefStore () {
+function createPrefStore (): PrefStore {
   const { subscribe, update, set } = localStorageWritable("svrxd_prefs", {
     group_statements: true,
     preserve_log    : false,
@@ -36,7 +36,8 @@ function createPrefStore () {
         name: "count",
         dir : "descending",
       },
-    }
+    },
+    details_width   : null,
   });
 
   return {

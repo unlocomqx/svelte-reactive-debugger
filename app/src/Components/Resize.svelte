@@ -1,5 +1,7 @@
 <script lang="ts">
 
+  import { pref_store } from "../store";
+
   export let details_div: HTMLDivElement;
   export let details_width: number;
 
@@ -22,6 +24,7 @@
   function stopResize () {
     resizing = false;
     document.body.classList.remove("noselect");
+    pref_store.setPref('details_width', details_width)
   }
 </script>
 
