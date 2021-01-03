@@ -1,8 +1,8 @@
 <script lang="ts">
   import { TableSort } from "svelte-tablesort";
   import { fade } from "svelte/transition";
-  import { ev_store, pref_store } from "../store";
-  import type { Sort } from "../types";
+  import { ev_store, pref_store, ui_store } from "../store";
+  import type { ReactiveEvent, Sort } from "../types";
   import Statement from "./Statement.svelte";
 
   function time (ms) {
@@ -19,6 +19,11 @@
     $pref_store.sort = $pref_store.sort || {};
     $pref_store.sort.list = ev.detail;
   }
+
+  function showDetails (item: ReactiveEvent) {
+    $ui_store.show_details = true;
+    $ui_store.show_details_item = item;
+  }
 </script>
 
 {#if $ev_store.length > 0}
@@ -30,7 +35,7 @@
         <th data-sort="start_time" data-sort-initial={sort.name === 'start_time' ? sort.direction : null}>Start time
         </th>
       </tr>
-      <tr slot="tbody" let:item={item}>
+      <tr slot="tbody" let:item={item} on:click={() => showDetails(item)}>
         <td style="display:grid;">
           <Statement statement={item.statement} filename={item.filename} line={item.line}/>
         </td>
