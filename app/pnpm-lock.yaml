@@ -1,4 +1,5 @@
 dependencies:
+  copy-to-clipboard: 3.3.1
   sirv-cli: 1.0.10
   svelte-local-storage-store: 0.1.4
   svelte-tablesort: github.com/unlocomqx/svelte-tablesort/186af509744356293e3afcb3b7561b005557d0c6
@@ -292,6 +293,12 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-pMD+MVR538ipqkG5JXeOEbKWS5um1H4LUUccUQG68qpeqBYbzYy79Gh55jkd2TtPdRfUaLWdv6LPP//5Zt0aPQ==
+  /copy-to-clipboard/3.3.1:
+    dependencies:
+      toggle-selection: 1.0.6
+    dev: false
+    resolution:
+      integrity: sha512-i13qo6kIHTTpCm8/Wup+0b1mVWETvu2kIMzKoK8FpkLkFxlt0znUAHcMzox+T8sPlqtZXq3CulEjQHsYiGFJUw==
   /deepmerge/4.2.2:
     dev: true
     engines:
@@ -872,6 +879,10 @@ packages:
       node: '>=8.0'
     resolution:
       integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==
+  /toggle-selection/1.0.6:
+    dev: false
+    resolution:
+      integrity: sha1-bkWxJj8gF/oKzH2J14sVuL932jI=
   /totalist/1.1.0:
     dev: false
     engines:
@@ -912,6 +923,7 @@ specifiers:
   '@rollup/plugin-node-resolve': ^10.0.0
   '@rollup/plugin-typescript': ^6.0.0
   '@tsconfig/svelte': ^1.0.0
+  copy-to-clipboard: ^3.3.1
   rollup: ^2.3.4
   rollup-plugin-css-only: ^3.1.0
   rollup-plugin-livereload: ^2.0.0

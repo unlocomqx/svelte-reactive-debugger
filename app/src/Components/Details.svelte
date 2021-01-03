@@ -1,5 +1,6 @@
 <script lang="ts">
   import { pref_store, ui_store } from "../store";
+  import PropertyList from "./Details/PropertyList.svelte";
   import Resize from "./Resize.svelte";
 
   let details_div: HTMLDivElement;
@@ -20,12 +21,13 @@
 
 <div id="details" bind:this={details_div} style="width: {details_width}px;">
   <div id="details-header">
-    Details
+    State
   </div>
   <div id="details-body">
-    <span>State:</span>
     {#if stateObj}
-      {Object.keys(stateObj).length}
+      <PropertyList
+        readOnly
+        entries={[{key: 'State', value: stateObj}]} />
     {/if}
   </div>
   <Resize {details_div} bind:details_width/>

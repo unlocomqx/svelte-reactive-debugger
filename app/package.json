@@ -24,6 +24,7 @@
     "typescript": "^3.9.3"
   },
   "dependencies": {
+    "copy-to-clipboard": "^3.3.1",
     "sirv-cli": "^1.0.0",
     "svelte-local-storage-store": "^0.1.4",
     "svelte-tablesort": "github:unlocomqx/svelte-tablesort"
