@@ -21,7 +21,6 @@
   }
 
   function showDetails (item: ReactiveEvent) {
-    console.log(item);
     $ui_store.show_details = true;
     $ui_store.inspected_item = item;
   }
