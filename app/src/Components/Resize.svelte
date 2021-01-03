@@ -24,7 +24,7 @@
   function stopResize () {
     resizing = false;
     document.body.classList.remove("noselect");
-    pref_store.setPref('details_width', details_width)
+    pref_store.setPref("details_width", details_width);
   }
 </script>
 
