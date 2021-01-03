@@ -6,7 +6,16 @@
   let details_width: number = $pref_store.details_width;
 
   $: state = $ui_store.inspected_item.state;
+  $: stateObj = parseState(state);
 
+  function parseState (state) {
+    try {
+      return JSON.parse(state);
+    } catch (e) {
+      return null;
+    }
+    return null;
+  }
 </script>
 
 <div id="details" bind:this={details_div} style="width: {details_width}px;">
@@ -14,7 +23,10 @@
     Details
   </div>
   <div id="details-body">
-    {state}
+    <span>State:</span>
+    {#if stateObj}
+      {Object.keys(stateObj).length}
+    {/if}
   </div>
   <Resize {details_div} bind:details_width/>
 </div>
