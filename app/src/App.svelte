@@ -26,7 +26,7 @@
           {/if}
         </RightPane>
         <LeftPane>
-          {#if $ui_store.show_details || true}
+          {#if $ui_store.show_details}
             <Details/>
           {/if}
         </LeftPane>

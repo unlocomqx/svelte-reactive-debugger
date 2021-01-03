@@ -14,6 +14,10 @@ body.dark {
   scrollbar-color: rgb(115, 115, 115) rgb(60, 60, 61);
 }
 
+.noselect {
+  user-select: none;
+}
+
 table.tablesort {
   -table-layout: fixed;
   width: 100%;
