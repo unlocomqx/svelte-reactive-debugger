@@ -1,6 +1,6 @@
 import { writable as localStorageWritable } from "svelte-local-storage-store";
 import { writable } from "svelte/store";
-import type { DbgStore, EventStore, UiStore } from "./types";
+import type { DbgStore, EventStore, PrefStore } from "./types";
 
 function createStore () {
   const { subscribe, update, set } = writable([]);
@@ -23,7 +23,7 @@ function createStore () {
 
 export const ev_store: EventStore = createStore();
 
-function createUiStore () {
+function createPrefStore () {
   const { subscribe, update, set } = localStorageWritable("svrxd_prefs", {
     group_statements: true,
     preserve_log    : false,
@@ -53,7 +53,7 @@ function createUiStore () {
   };
 }
 
-export const ui_store: UiStore = createUiStore();
+export const pref_store: PrefStore = createPrefStore();
 
 
 function createDbgStore () {

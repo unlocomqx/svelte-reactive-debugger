@@ -1,7 +1,7 @@
 <script lang="ts">
   import { TableSort } from "svelte-tablesort";
   import { fade } from "svelte/transition";
-  import { ev_store, ui_store } from "../store";
+  import { ev_store, pref_store } from "../store";
   import type { Sort } from "../types";
   import Statement from "./Statement.svelte";
 
@@ -10,14 +10,14 @@
   }
 
   let sort: Sort;
-  $: sort = $ui_store?.sort?.list ?? {
+  $: sort = $pref_store?.sort?.list ?? {
     name: "start_time",
     direction: "descending",
   };
 
   function saveSort (ev) {
-    $ui_store.sort = $ui_store.sort || {};
-    $ui_store.sort.list = ev.detail;
+    $pref_store.sort = $pref_store.sort || {};
+    $pref_store.sort.list = ev.detail;
   }
 </script>
 

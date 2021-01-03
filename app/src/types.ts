@@ -20,7 +20,7 @@ export type Sort = {
   direction: "ascending" | "descending";
 };
 
-export interface UiStoreData {
+export interface PrefStoreData {
   group_statements: boolean;
   preserve_log: boolean;
   sort: {
@@ -28,7 +28,7 @@ export interface UiStoreData {
   }
 }
 
-export interface UiStore extends Writable<UiStoreData> {
+export interface PrefStore extends Writable<PrefStoreData> {
   setPref (name: string, value: boolean);
 }
 

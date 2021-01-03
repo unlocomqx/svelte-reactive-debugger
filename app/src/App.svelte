@@ -1,19 +1,19 @@
 <script lang="ts">
-  import { ui_store, dbg_store } from "./store";
+  import List from "./Components/List.svelte";
   import Summary from "./Components/Summary.svelte";
   import Toolbar from "./Components/Toolbar.svelte";
-  import List from "./Components/List.svelte";
+  import { dbg_store, pref_store } from "./store";
 </script>
 
 <div>
-  {#if $ui_store.debugger_enabled}
+  {#if $pref_store.debugger_enabled}
     <Toolbar/>
     {#if !$dbg_store.tab_connected}
       <p style="text-align: center;">
         Reload the page to connect to the svelte reactive debugger
       </p>
     {:else}
-      {#if $ui_store.group_statements}
+      {#if $pref_store.group_statements}
         <Summary/>
       {:else}
         <List/>

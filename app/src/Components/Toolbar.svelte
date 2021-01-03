@@ -1,5 +1,5 @@
 <script>
-  import { ev_store, ui_store } from "../store";
+  import { ev_store, pref_store } from "../store";
 
   function clearAll() {
     ev_store.clear();
@@ -11,12 +11,12 @@
 
   <div class="divider"></div>
 
-  <input type="checkbox" id="group_statements" bind:checked={$ui_store.group_statements}/>
+  <input type="checkbox" id="group_statements" bind:checked={$pref_store.group_statements}/>
   <label style="position: relative; top: -1px;" for="group_statements">Group statements</label>
 
   <div class="spacer"></div>
 
-  <input type="checkbox" id="preserve_log" bind:checked={$ui_store.preserve_log}/>
+  <input type="checkbox" id="preserve_log" bind:checked={$pref_store.preserve_log}/>
   <label style="position: relative; top: -1px;" for="preserve_log">Preserve log</label>
 </div>
 

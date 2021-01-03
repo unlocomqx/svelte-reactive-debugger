@@ -2,9 +2,9 @@
 import { devtools } from "chrome";
 import { get } from "svelte/store";
 import App from "./App.svelte";
-import { dbg_store, ev_store, ui_store } from "./store";
+import { dbg_store, ev_store, pref_store } from "./store";
 
-const prefs = get(ui_store);
+const prefs = get(pref_store);
 
 function setDarkMode (theme) {
   if (theme == "dark") {
