@@ -46,6 +46,6 @@ export interface UiStoreData {
   inspected_item: ReactiveEvent;
 }
 
-export interface UiStore extends Readable<UiStoreData> {
+export interface UiStore extends Writable<UiStoreData> {
   setProp (name: string, value: boolean);
 }

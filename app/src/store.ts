@@ -76,13 +76,15 @@ export const dbg_store: DbgStore = createDbgStore();
 
 
 function createUiStore (): UiStore {
-  const { subscribe, update } = writable({
+  const { subscribe, update, set } = writable({
     show_details  : false,
     inspected_item: null,
   });
 
   return {
     subscribe,
+    set,
+    update,
 
     setProp (name, value) {
       return update(state => {
