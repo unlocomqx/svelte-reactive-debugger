@@ -4,7 +4,7 @@
   export let statement;
   export let filename;
   export let line;
-
+  export let has_changes = false;
   function copyLocation (e: MouseEvent) {
     if (e.metaKey || e.ctrlKey) {
       copy(`${ filename }:${ line }`);
@@ -14,7 +14,9 @@
 
 </script>
 
-<span on:click={copyLocation} title="(ctrl/cmd click to copy location)&#13;{statement}">{statement}</span>
+<span on:click={copyLocation} title="(ctrl/cmd click to copy location)&#13;{statement}">
+  <span title="Component state change detected">{has_changes ? '*': ''}</span> {statement}
+</span>
 
 <style>
   span {

@@ -61,7 +61,7 @@
           class:same={$ui_store.inspected_item && $ui_store.inspected_item.id === item.id}
           on:click={(ev) => showDetails(ev, item)}>
         <td style="display:grid;">
-          <Statement statement={item.statement} filename={item.filename} line={item.line}/>
+          <Statement statement={item.statement} filename={item.filename} line={item.line} has_changes={item.has_changes}/>
         </td>
         <td>{item.duration}</td>
         <td>{time(item.start_time)}</td>

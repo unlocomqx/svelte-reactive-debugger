@@ -10,6 +10,7 @@ export interface ReactiveEvent {
   end_state: string;
   exec_id: string;
   duration: number;
+  has_changes: boolean;
 }
 
 export interface EventStore extends Readable<ReactiveEvent[]> {
