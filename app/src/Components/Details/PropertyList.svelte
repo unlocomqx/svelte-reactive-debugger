@@ -26,13 +26,6 @@
     color: rgb(118, 118, 118);
   }
 
-  h1 {
-    margin: 8px 0 0 8px;
-    color: rgb(118, 118, 118);
-    font-weight: bold;
-    font-size: 1rem;
-  }
-
   ul {
     padding: 0;
     margin: 5px;
