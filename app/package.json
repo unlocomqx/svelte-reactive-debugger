@@ -25,6 +25,8 @@
   },
   "dependencies": {
     "copy-to-clipboard": "^3.3.1",
+    "deep-object-diff": "^1.1.0",
+    "jsondiffpatch": "^0.4.1",
     "sirv-cli": "^1.0.0",
     "svelte-local-storage-store": "^0.1.4",
     "svelte-tablesort": "github:unlocomqx/svelte-tablesort"

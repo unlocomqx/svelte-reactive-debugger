@@ -1,7 +1,11 @@
 <script lang="ts">
+  import * as jsondiffpatch from "jsondiffpatch";
+  import "jsondiffpatch/dist/formatters-styles/html.css";
   import { pref_store, ui_store } from "../store";
   import PropertyList from "./Details/PropertyList.svelte";
   import Resize from "./Resize.svelte";
+
+  const jsonDiff = jsondiffpatch.create({});
 
   let details_div: HTMLDivElement;
   let details_width: number = $pref_store.details_width;
@@ -9,12 +13,15 @@
   let endEntries;
   $: end_state = $ui_store.inspected_item.end_state;
   $: endStateObj = parseState(end_state);
-  $: endStateObj && (endEntries = Object.entries(endStateObj).map(([key, value]) => ({key, value})));
+  $: endStateObj && (endEntries = Object.entries(endStateObj).map(([key, value]) => ({ key, value })));
 
   let startEntries;
   $: start_state = $ui_store.inspected_item.start_state;
   $: startStateObj = parseState(start_state);
-  $: startStateObj && (startEntries = Object.entries(startStateObj).map(([key, value]) => ({key, value})));
+  $: startStateObj && (startEntries = Object.entries(startStateObj).map(([key, value]) => ({ key, value })));
+
+  $: stateDiff = jsonDiff.diff(startStateObj, endStateObj);
+  $: diffHtml = jsondiffpatch.formatters.html.format(stateDiff, startStateObj);
 
   function parseState (state) {
     try {
@@ -31,18 +38,28 @@
     State
   </div>
   <div id="details-body">
+    <div class="state-row">
+      <span style="font-weight: bold;">Changes</span>
+      <div>
+        {@html diffHtml}
+      </div>
+    </div>
     {#if endStateObj}
-      <PropertyList
-        readOnly
-        header="Current"
-        entries={endEntries} />
+      <div class="state-row">
+        <PropertyList
+          readOnly
+          header="Current"
+          entries={endEntries}/>
+      </div>
     {/if}
 
     {#if startEntries}
-      <PropertyList
-        readOnly
-        header="Previous"
-        entries={startEntries} />
+      <div class="state-row">
+        <PropertyList
+          readOnly
+          header="Previous"
+          entries={startEntries}/>
+      </div>
     {/if}
   </div>
   <Resize {details_div} bind:details_width/>
@@ -69,5 +86,33 @@
 
   #details-body {
     padding: 5px;
+  }
+
+  .state-row {
+    margin-bottom: 10px;
+  }
+
+  :global(.jsondiffpatch-unchanged) {
+    display: none;
+  }
+
+  :global(.jsondiffpatch-delta) {
+    padding: 0 !important;
+  }
+
+  :global(.jsondiffpatch-added .jsondiffpatch-property-name,
+  .jsondiffpatch-added .jsondiffpatch-value pre,
+  .jsondiffpatch-modified .jsondiffpatch-right-value pre,
+  .jsondiffpatch-textdiff-added) {
+    background: #8BC34A !important;
+    color: #000;
+  }
+
+  :global(.jsondiffpatch-deleted .jsondiffpatch-property-name,
+  .jsondiffpatch-deleted pre,
+  .jsondiffpatch-modified .jsondiffpatch-left-value pre,
+  .jsondiffpatch-textdiff-deleted) {
+    background: #f44336 !important;
+    color: #fff;
   }
 </style>
