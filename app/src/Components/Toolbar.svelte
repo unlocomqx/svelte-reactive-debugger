@@ -1,8 +1,13 @@
 <script>
-  import { ev_store, pref_store } from "../store";
+  import { ev_store, pref_store, ui_store } from "../store";
 
   function clearAll() {
     ev_store.clear();
+  }
+
+  function handleGroupStatementsChange() {
+    $ui_store.show_details = false;
+    $ui_store.inspected_item = null;
   }
 </script>
 
@@ -11,7 +16,7 @@
 
   <div class="divider"></div>
 
-  <input type="checkbox" id="group_statements" bind:checked={$pref_store.group_statements}/>
+  <input type="checkbox" id="group_statements" on:change={handleGroupStatementsChange} bind:checked={$pref_store.group_statements}/>
   <label style="position: relative; top: -1px;" for="group_statements">Group statements</label>
 
   <div class="spacer"></div>

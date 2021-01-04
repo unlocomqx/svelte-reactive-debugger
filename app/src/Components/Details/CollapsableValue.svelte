@@ -3,7 +3,6 @@
   import Collapse from "./nodes/Collapse.svelte";
   import Editable from "./Editable.svelte";
 
-  export let errorMessage
   export let readOnly
   export let value
   export let key
@@ -35,7 +34,6 @@
 </script>
 
 <li
-  {...{ 'data-tooltip': errorMessage }}
   on:click|stopPropagation={_ => (collapsed = !collapsed)}>
   {#if type == 'string'}
     {key}:&nbsp;
@@ -97,9 +95,6 @@
       <span class="object">Object &lbrace; &rbrace;</span>
     {/if}
   {/if}
-  {#if errorMessage}
-    <span class="error">!</span>
-  {/if}
 </li>
 
 <style>
@@ -137,13 +132,6 @@
 
   li :global(.collapse) {
     margin-left: -15px;
-  }
-
-  .error {
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-size: 1rem;
   }
 
   :global(.dark) .function,

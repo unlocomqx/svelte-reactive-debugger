@@ -1,23 +1,9 @@
 <script>
-  import { devtools } from "chrome";
   import CollapsableValue from "./CollapsableValue.svelte";
 
   export let header
   export let entries = []
-  export let id
   export let readOnly = false
-
-  let errorMessages = {}
-  function change(key, value) {
-    devtools.inspectedWindow.eval(
-      `__svelte_devtools_inject_state(${id}, '${key}', ${value})`,
-      (result, error) =>
-        (errorMessages[key] =
-          error && error.isException
-            ? error.value.substring(0, error.value.indexOf('\n'))
-            : undefined)
-    )
-  }
 </script>
 
 <style>
@@ -45,7 +31,6 @@
   <ul>
     {#each entries as { key, value } (key)}
       <CollapsableValue
-        errorMessage={errorMessages[key]}
         {readOnly}
         {key}
         {value}

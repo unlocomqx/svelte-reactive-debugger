@@ -11,12 +11,12 @@
   let details_width: number = $pref_store.details_width;
 
   let endEntries;
-  $: end_state = $ui_store.inspected_item.end_state;
+  $: end_state = $ui_store.inspected_item?.end_state;
   $: endStateObj = parseState(end_state);
   $: endStateObj && (endEntries = Object.entries(endStateObj).map(([key, value]) => ({ key, value })));
 
   let startEntries;
-  $: start_state = $ui_store.inspected_item.start_state;
+  $: start_state = $ui_store.inspected_item?.start_state;
   $: startStateObj = parseState(start_state);
   $: startStateObj && (startEntries = Object.entries(startStateObj).map(([key, value]) => ({ key, value })));
 
