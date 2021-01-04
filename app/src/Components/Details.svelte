@@ -9,6 +9,9 @@
   $: state = $ui_store.inspected_item.state;
   $: stateObj = parseState(state);
 
+  let entries;
+  $: stateObj && (entries = Object.entries(stateObj).map(([key, value]) => ({key, value})));
+
   function parseState (state) {
     try {
       return JSON.parse(state);
@@ -27,7 +30,7 @@
     {#if stateObj}
       <PropertyList
         readOnly
-        entries={[{key: 'State', value: stateObj}]} />
+        entries={entries} />
     {/if}
   </div>
   <Resize {details_div} bind:details_width/>
