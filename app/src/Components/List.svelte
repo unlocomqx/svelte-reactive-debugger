@@ -29,7 +29,6 @@
   }
 
   function handleKeyUp (ev: KeyboardEvent) {
-    ev.preventDefault();
     if (!current_row) {
       return;
     }
@@ -50,10 +49,8 @@
   }
 </script>
 
-<svelte:body on:keyup={handleKeyUp} />
-
 {#if $ev_store.length > 0}
-  <div in:fade={{duration: 100}}>
+  <div id="statements-list" in:fade={{duration: 100}} tabindex="0" on:keydown|capture|nonpassive={handleKeyUp}>
     <TableSort items={$ev_store} on:sort={saveSort}>
       <tr slot="thead">
         <th data-sort="statement" data-sort-initial={sort.name === 'statement' ? sort.direction : null}>Statement</th>
@@ -76,6 +73,10 @@
 {/if}
 
 <style>
+  #statements-list {
+    outline: none;
+  }
+
   tr.same {
     background-color: rgba(255, 62, 0, 0.2) !important;
   }
