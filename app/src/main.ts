@@ -45,7 +45,7 @@ backgroundPort.onMessage.addListener(function (request) {
     const duration = now - reactiveEvent.start_time;
 
     const stateDiff = jsonDiff.diff(reactiveEvent.start_state, reactiveEvent.end_state);
-    console.log(!!stateDiff);
+
     ev_store.insertEvent({
       ...reactiveEvent,
       duration,
