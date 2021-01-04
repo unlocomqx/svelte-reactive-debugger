@@ -1,17 +1,20 @@
-<script>
-  import copy from 'copy-to-clipboard';
+<script lang="ts">
+  import copy from "copy-to-clipboard";
 
   export let statement;
   export let filename;
   export let line;
 
-  function copyLocation() {
-    copy(`${filename}:${line}`);
+  function copyLocation(e: MouseEvent) {
+    if (e.metaKey || e.ctrlKey) {
+      copy(`${filename}:${line}`);
+      e.stopPropagation();
+    }
   }
 
 </script>
 
-<span on:click={copyLocation} title="(click to copy location {filename}:{line})&#13;{statement}">{statement}</span>
+<span on:click={copyLocation} title="(ctrl/cmd click to copy location)&#13;{statement}">{statement}</span>
 
 <style>
   span {
