@@ -45,7 +45,7 @@
 </style>
 
 {#if header}
-  <h1>{header}</h1>
+  <span style="font-weight: bold;">{header}</span>
 {/if}
 
 {#if entries.length}

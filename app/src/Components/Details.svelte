@@ -6,11 +6,15 @@
   let details_div: HTMLDivElement;
   let details_width: number = $pref_store.details_width;
 
-  $: state = $ui_store.inspected_item.state;
-  $: stateObj = parseState(state);
+  let endEntries;
+  $: end_state = $ui_store.inspected_item.end_state;
+  $: endStateObj = parseState(end_state);
+  $: endStateObj && (endEntries = Object.entries(endStateObj).map(([key, value]) => ({key, value})));
 
-  let entries;
-  $: stateObj && (entries = Object.entries(stateObj).map(([key, value]) => ({key, value})));
+  let startEntries;
+  $: start_state = $ui_store.inspected_item.start_state;
+  $: startStateObj = parseState(start_state);
+  $: startStateObj && (startEntries = Object.entries(startStateObj).map(([key, value]) => ({key, value})));
 
   function parseState (state) {
     try {
@@ -27,10 +31,18 @@
     State
   </div>
   <div id="details-body">
-    {#if stateObj}
+    {#if endStateObj}
       <PropertyList
         readOnly
-        entries={entries} />
+        header="Current"
+        entries={endEntries} />
+    {/if}
+
+    {#if startEntries}
+      <PropertyList
+        readOnly
+        header="Previous"
+        entries={startEntries} />
     {/if}
   </div>
   <Resize {details_div} bind:details_width/>
