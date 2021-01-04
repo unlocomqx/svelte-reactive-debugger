@@ -45,11 +45,14 @@
       }
     }
   }
+
+  $: changes_only = $pref_store.changes_only
+  $: items = (changes_only ? $ev_store.filter(ev => ev.has_changes) : $ev_store)
 </script>
 
 {#if $ev_store.length > 0}
   <div id="statements-list" in:fade={{duration: 100}} tabindex="0" on:keydown|capture|nonpassive={handleKeyUp}>
-    <TableSort items={$ev_store} on:sort={saveSort}>
+    <TableSort {items} on:sort={saveSort}>
       <tr slot="thead">
         <th data-sort="statement" data-sort-initial={sort.name === 'statement' ? sort.direction : null}>Statement</th>
         <th data-sort="duration" data-sort-initial={sort.name === 'duration' ? sort.direction : null}>Duration</th>
@@ -59,7 +62,6 @@
       <tr slot="tbody" let:item={item}
           class:highlight={$ui_store.inspected_item && $ui_store.inspected_item.exec_id === item.exec_id}
           class:same={$ui_store.inspected_item && $ui_store.inspected_item.id === item.id}
-          class:hidden={$pref_store.changes_only && !item.has_changes}
           on:click={(ev) => showDetails(ev, item)}>
         <td style="display:grid;">
           <Statement statement={item.statement} filename={item.filename} line={item.line} has_changes={item.has_changes}/>
@@ -83,9 +85,5 @@
   tr.highlight {
     background-color: rgb(255, 62, 0) !important;
     color: #fff;
-  }
-
-  tr.hidden {
-    display: none;
   }
 </style>

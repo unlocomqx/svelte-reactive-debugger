@@ -3,7 +3,7 @@ import { devtools } from "chrome";
 import * as jsondiffpatch from "jsondiffpatch";
 import { get } from "svelte/store";
 import App from "./App.svelte";
-import { dbg_store, ev_store, pref_store } from "./store";
+import { dbg_store, ev_store, pref_store, ui_store } from "./store";
 import type { ReactiveEvent } from "./types";
 
 const jsonDiff = jsondiffpatch.create({});
@@ -55,6 +55,8 @@ backgroundPort.onMessage.addListener(function (request) {
 
   if (request.type === "Reload") {
     if (!prefs.preserve_log) {
+      ui_store.setProp("show_details", false);
+      ui_store.setProp("inspected_item", null);
       ev_store.clear();
     }
   }
