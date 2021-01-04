@@ -27,6 +27,7 @@ function createPrefStore (): PrefStore {
   const { subscribe, update, set } = localStorageWritable("svrxd_prefs", {
     group_statements: true,
     preserve_log    : false,
+    changes_only    : false,
     sort            : {
       list   : {
         name: "start_time",

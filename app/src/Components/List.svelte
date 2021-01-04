@@ -59,6 +59,7 @@
       <tr slot="tbody" let:item={item}
           class:highlight={$ui_store.inspected_item && $ui_store.inspected_item.exec_id === item.exec_id}
           class:same={$ui_store.inspected_item && $ui_store.inspected_item.id === item.id}
+          class:hidden={$pref_store.changes_only && !item.has_changes}
           on:click={(ev) => showDetails(ev, item)}>
         <td style="display:grid;">
           <Statement statement={item.statement} filename={item.filename} line={item.line} has_changes={item.has_changes}/>
@@ -82,5 +83,9 @@
   tr.highlight {
     background-color: rgb(255, 62, 0) !important;
     color: #fff;
+  }
+
+  tr.hidden {
+    display: none;
   }
 </style>

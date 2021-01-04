@@ -23,6 +23,13 @@
 
   <input type="checkbox" id="preserve_log" bind:checked={$pref_store.preserve_log}/>
   <label style="position: relative; top: -1px;" for="preserve_log">Preserve log</label>
+
+  <div class="spacer"></div>
+
+  {#if !$pref_store.group_statements}
+    <input type="checkbox" id="changes_only" bind:checked={$pref_store.changes_only}/>
+    <label style="position: relative; top: -1px;" for="changes_only">Changes only</label>
+  {/if}
 </div>
 
 <style>
