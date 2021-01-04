@@ -7,6 +7,7 @@ export interface ReactiveEvent {
   line: number;
   state: string;
   start_time: number;
+  exec_id: string;
   duration: number;
 }
 

@@ -11,7 +11,7 @@
 
   let sort: Sort;
   $: sort = $pref_store?.sort?.list ?? {
-    name: "start_time",
+    name     : "start_time",
     direction: "descending",
   };
 
@@ -35,7 +35,10 @@
         <th data-sort="start_time" data-sort-initial={sort.name === 'start_time' ? sort.direction : null}>Start time
         </th>
       </tr>
-      <tr slot="tbody" let:item={item} on:click={() => showDetails(item)}>
+      <tr slot="tbody" let:item={item}
+          class:highlight={$ui_store.inspected_item && $ui_store.inspected_item.exec_id === item.exec_id}
+          class:same={$ui_store.inspected_item && $ui_store.inspected_item.id === item.id}
+          on:click={() => showDetails(item)}>
         <td style="display:grid;">
           <Statement statement={item.statement} filename={item.filename} line={item.line}/>
         </td>
@@ -45,3 +48,14 @@
     </TableSort>
   </div>
 {/if}
+
+<style>
+  tr.same {
+    background-color: rgba(255, 62, 0, 0.2) !important;
+  }
+
+  tr.highlight {
+    background-color: rgb(255, 62, 0) !important;
+    color: #fff;
+  }
+</style>
