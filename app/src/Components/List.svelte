@@ -34,14 +34,12 @@
     }
     if (ev.key === "ArrowUp") {
       ev.preventDefault();
-      ev.stopPropagation();
       if (current_row.previousSibling) {
         trigger(current_row.previousSibling, "click");
       }
     }
     if (ev.key === "ArrowDown") {
       ev.preventDefault();
-      ev.stopPropagation();
       if (current_row.nextSibling) {
         trigger(current_row.nextSibling, "click");
       }
