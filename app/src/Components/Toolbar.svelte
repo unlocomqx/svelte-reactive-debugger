@@ -16,7 +16,8 @@
 
   <div class="divider"></div>
 
-  <input type="checkbox" id="group_statements" on:change={handleGroupStatementsChange} bind:checked={$pref_store.group_statements}/>
+  <input type="checkbox" id="group_statements" on:change={handleGroupStatementsChange}
+         bind:checked={$pref_store.group_statements}/>
   <label style="position: relative; top: -1px;" for="group_statements">Group statements</label>
 
   <div class="spacer"></div>
@@ -27,8 +28,10 @@
   <div class="spacer"></div>
 
   {#if !$pref_store.group_statements}
-    <input type="checkbox" id="changes_only" bind:checked={$pref_store.changes_only}/>
-    <label style="position: relative; top: -1px;" for="changes_only">Changes only</label>
+    <span title="Show only statements which changed the component state">
+      <input type="checkbox" id="changes_only" bind:checked={$pref_store.changes_only}/>
+      <label style="position: relative; top: -1px;" for="changes_only">Changes only</label>
+    </span>
   {/if}
 </div>
 
