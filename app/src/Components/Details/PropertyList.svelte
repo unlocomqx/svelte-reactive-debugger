@@ -46,7 +46,6 @@
     {#each entries as { key, value } (key)}
       <CollapsableValue
         errorMessage={errorMessages[key]}
-        collapsed={false}
         {readOnly}
         {key}
         {value}
