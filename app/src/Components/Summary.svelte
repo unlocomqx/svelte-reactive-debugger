@@ -6,6 +6,7 @@
   import Statement from "./Statement.svelte";
 
   $: statements = groupStatements($ev_store);
+  $: items = Array.from(statements.values());
 
   function groupStatements (events) {
     let statements = new Map();
@@ -43,9 +44,9 @@
 
 {#if statements.size > 0}
   <div in:fade={{duration: 100}}>
-    <TableSort items={Array.from(statements.values())} on:sort={saveSort}>
+    <TableSort {items} on:sort={saveSort}>
       <tr slot="thead">
-        <th data-sort="statement" data-sort-initial={sort.name === 'statement' ? sort.direction : null}>Statements</th>
+        <th data-sort="statement" data-sort-initial={sort.name === 'statement' ? sort.direction : null}>Statements ({items.length})</th>
         <th data-sort="count" data-sort-initial={sort.name === 'count' ? sort.direction : null}>Count</th>
         <th data-sort="duration" data-sort-initial={sort.name === 'duration' ? sort.direction : null}>Duration</th>
       </tr>
