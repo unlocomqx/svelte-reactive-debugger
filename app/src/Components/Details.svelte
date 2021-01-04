@@ -97,7 +97,14 @@
   }
 
   :global(.jsondiffpatch-delta) {
+    font-family: inherit !important;
+    font-size: inherit !important;
     padding: 0 !important;
+  }
+
+  :global(.jsondiffpatch-delta pre) {
+    font-family: inherit !important;
+    font-size: inherit !important;
   }
 
   :global(.jsondiffpatch-added .jsondiffpatch-property-name,
