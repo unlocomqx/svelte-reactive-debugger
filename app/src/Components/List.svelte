@@ -54,7 +54,7 @@
   <div id="statements-list" in:fade={{duration: 100}} tabindex="0" on:keydown|capture|nonpassive={handleKeyUp}>
     <TableSort {items} on:sort={saveSort}>
       <tr slot="thead">
-        <th data-sort="statement" data-sort-initial={sort.name === 'statement' ? sort.direction : null}>Statement</th>
+        <th data-sort="statement" data-sort-initial={sort.name === 'statement' ? sort.direction : null}>Statements ({items.length})</th>
         <th data-sort="duration" data-sort-initial={sort.name === 'duration' ? sort.direction : null}>Duration</th>
         <th data-sort="start_time" data-sort-initial={sort.name === 'start_time' ? sort.direction : null}>Start time
         </th>
