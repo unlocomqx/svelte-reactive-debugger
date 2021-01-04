@@ -5,9 +5,9 @@
   export let filename;
   export let line;
 
-  function copyLocation(e: MouseEvent) {
+  function copyLocation (e: MouseEvent) {
     if (e.metaKey || e.ctrlKey) {
-      copy(`${filename}:${line}`);
+      copy(`${ filename }:${ line }`);
       e.stopPropagation();
     }
   }
