@@ -3,6 +3,7 @@
   import { fade } from "svelte/transition";
   import { ev_store, pref_store, ui_store } from "../store";
   import type { ReactiveEvent, Sort } from "../types";
+  import { trigger } from "../utils";
   import Statement from "./Statement.svelte";
 
   function time (ms) {
@@ -20,11 +21,36 @@
     $pref_store.sort.list = ev.detail;
   }
 
-  function showDetails (item: ReactiveEvent) {
+  let current_row: HTMLTableRowElement = null;
+  function showDetails (ev: MouseEvent, item: ReactiveEvent) {
+    current_row = ev.currentTarget;
     $ui_store.show_details = true;
     $ui_store.inspected_item = item;
   }
+
+  function handleKeyUp (ev: KeyboardEvent) {
+    ev.preventDefault();
+    if (!current_row) {
+      return;
+    }
+    if (ev.key === "ArrowUp") {
+      ev.preventDefault();
+      ev.stopPropagation();
+      if (current_row.previousSibling) {
+        trigger(current_row.previousSibling, "click");
+      }
+    }
+    if (ev.key === "ArrowDown") {
+      ev.preventDefault();
+      ev.stopPropagation();
+      if (current_row.nextSibling) {
+        trigger(current_row.nextSibling, "click");
+      }
+    }
+  }
 </script>
+
+<svelte:body on:keyup={handleKeyUp} />
 
 {#if $ev_store.length > 0}
   <div in:fade={{duration: 100}}>
@@ -38,7 +64,7 @@
       <tr slot="tbody" let:item={item}
           class:highlight={$ui_store.inspected_item && $ui_store.inspected_item.exec_id === item.exec_id}
           class:same={$ui_store.inspected_item && $ui_store.inspected_item.id === item.id}
-          on:click={() => showDetails(item)}>
+          on:click={(ev) => showDetails(ev, item)}>
         <td style="display:grid;">
           <Statement statement={item.statement} filename={item.filename} line={item.line}/>
         </td>

@@ -487,6 +487,7 @@ packages:
     resolution:
       integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==
   /jsondiffpatch/0.4.1:
+    bundledDependencies: []
     dependencies:
       chalk: 2.4.2
       diff-match-patch: 1.0.5

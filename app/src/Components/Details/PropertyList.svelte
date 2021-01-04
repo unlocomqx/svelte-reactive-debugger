@@ -33,8 +33,7 @@
       <CollapsableValue
         {readOnly}
         {key}
-        {value}
-        on:change={e => change(key, e.detail)} />
+        {value}/>
     {/each}
   </ul>
 {:else}
