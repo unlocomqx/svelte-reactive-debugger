@@ -28,22 +28,39 @@
 
   <input type="checkbox" id="preserve_log" bind:checked={$pref_store.preserve_log}/>
   <label style="position: relative; top: -1px;" for="preserve_log">Preserve log</label>
+</div>
 
-  <div class="spacer"></div>
+{#if $pref_store.show_filters}
+  <div class="toolbar filters">
+    <input type="text" placeholder="Filter">
 
-  {#if !$pref_store.group_statements}
+    <div class="spacer"></div>
+
+    {#if !$pref_store.group_statements}
     <span title="Show only statements which changed the component state">
       <input type="checkbox" id="changes_only" bind:checked={$pref_store.changes_only}/>
       <label style="position: relative; top: -1px;" for="changes_only">Changes only</label>
     </span>
-  {/if}
-</div>
+    {/if}
+  </div>
+{/if}
 
 <style>
   .toolbar {
     display: flex;
     align-items: center;
     padding: 3px 5px;
+  }
+
+  .filters {
+    border-top: 1px solid #3a3a3a;
+  }
+
+  input {
+    display: inline;
+    background: transparent;
+    border: 1px solid #a3a3a3;
+    font-size: 12px;
   }
 
   .divider {
