@@ -29,6 +29,7 @@ function createPrefStore (): PrefStore {
     preserve_log    : false,
     show_filters    : false,
     changes_only    : false,
+    filter_text     : null,
     sort            : {
       list   : {
         name: "start_time",

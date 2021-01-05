@@ -28,6 +28,7 @@ export interface PrefStoreData {
   preserve_log: boolean;
   show_filters: boolean;
   changes_only: boolean;
+  filter_text: string;
   sort: {
     [name in "list" | "summary"]: Sort
   }

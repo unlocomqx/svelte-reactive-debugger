@@ -12,11 +12,11 @@
 </script>
 
 <div class="toolbar">
-  <button on:click={clearAll} class="icon delete" title="Clear all" style="position: relative; top: -1px;"></button>
+  <button on:click={clearAll} class="icon delete" title="Clear all" style="position: relative; top: -1px;"/>
 
   <div class="divider"></div>
 
-  <button on:click={() => $pref_store.show_filters = !$pref_store.show_filters} class="icon filter" class:on={$pref_store.show_filters} title="Toggle filters" style="position: relative; top: -1px;"></button>
+  <button on:click={() => $pref_store.show_filters = !$pref_store.show_filters} class="icon filter" class:on={$pref_store.show_filters} title="Toggle filters" style="position: relative; top: -1px;"/>
 
   <div class="divider"></div>
 
@@ -32,7 +32,12 @@
 
 {#if $pref_store.show_filters}
   <div class="toolbar filters">
-    <input type="text" placeholder="Filter">
+    <div style="position: relative;">
+      <input type="text" placeholder="Filter" bind:value={$pref_store.filter_text}>
+      {#if $pref_store.filter_text}
+        <button on:click={() => $pref_store.filter_text = null} class="icon medium clear" title="Clear filter"/>
+      {/if}
+    </div>
 
     <div class="spacer"></div>
 
@@ -60,7 +65,13 @@
     display: inline;
     background: transparent;
     border: 1px solid #a3a3a3;
+    outline: none;
     font-size: 12px;
+    color: inherit;
+  }
+
+  input:focus {
+    border: 1px solid #4688f1;
   }
 
   .divider {
@@ -72,5 +83,11 @@
 
   .spacer {
     margin-right: 5px;
+  }
+
+  .clear {
+    position: absolute;
+    top: 1px;
+    right: 1px;
   }
 </style>
