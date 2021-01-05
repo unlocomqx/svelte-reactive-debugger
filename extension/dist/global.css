@@ -76,8 +76,18 @@ body.dark table.tablesort tbody tr:nth-child(even) {
   outline: none;
 }
 
+.icon.on {
+  background-image: url(icons/largeIcons-on.svg);
+}
+
 .icon.delete {
   background-position: 0px 144px;
+  width: 28px;
+  height: 24px;
+}
+
+.icon.filter {
+  background-position: -56px 120px;
   width: 28px;
   height: 24px;
 }

@@ -16,6 +16,10 @@
 
   <div class="divider"></div>
 
+  <button on:click={() => $pref_store.show_filters = !$pref_store.show_filters} class="icon filter" class:on={$pref_store.show_filters} title="Toggle filters" style="position: relative; top: -1px;"></button>
+
+  <div class="divider"></div>
+
   <input type="checkbox" id="group_statements" on:change={handleGroupStatementsChange}
          bind:checked={$pref_store.group_statements}/>
   <label style="position: relative; top: -1px;" for="group_statements">Group statements</label>
