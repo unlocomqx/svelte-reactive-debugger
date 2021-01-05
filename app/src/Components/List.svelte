@@ -46,15 +46,21 @@
     }
   }
 
-  $: changes_only = $pref_store.changes_only
-  $: items = (changes_only ? $ev_store.filter(ev => ev.has_changes) : $ev_store)
+  $: changes_only = $pref_store.changes_only;
+  $: filter_text = $pref_store.filter_text;
+
+  let filtered: ReactiveEvent[];
+  $: filtered = filter_text ? $ev_store.filter(ev => ev.statement.toLowerCase().includes(filter_text.toLowerCase())) : $ev_store;
+  $: items = (changes_only ? filtered.filter(ev => ev.has_changes) : filtered);
 </script>
 
 {#if $ev_store.length > 0}
   <div id="statements-list" in:fade={{duration: 100}} tabindex="0" on:keydown|capture|nonpassive={handleKeyUp}>
     <TableSort {items} on:sort={saveSort}>
       <tr slot="thead">
-        <th data-sort="statement" data-sort-initial={sort.name === 'statement' ? sort.direction : null}>Statements ({items.length})</th>
+        <th data-sort="statement" data-sort-initial={sort.name === 'statement' ? sort.direction : null}>
+          Statements ({items.length})
+        </th>
         <th data-sort="duration" data-sort-initial={sort.name === 'duration' ? sort.direction : null}>Duration</th>
         <th data-sort="start_time" data-sort-initial={sort.name === 'start_time' ? sort.direction : null}>Start time
         </th>
@@ -64,7 +70,8 @@
           class:same={$ui_store.inspected_item && $ui_store.inspected_item.id === item.id}
           on:click={(ev) => showDetails(ev, item)}>
         <td style="display:grid;">
-          <Statement statement={item.statement} filename={item.filename} line={item.line} has_changes={item.has_changes}/>
+          <Statement statement={item.statement} filename={item.filename} line={item.line}
+                     has_changes={item.has_changes}/>
         </td>
         <td>{item.duration}</td>
         <td>{time(item.start_time)}</td>

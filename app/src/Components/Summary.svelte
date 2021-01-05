@@ -2,11 +2,16 @@
   import { TableSort } from "svelte-tablesort";
   import { fade } from "svelte/transition";
   import { ev_store, pref_store } from "../store";
-  import type { Sort } from "../types";
+  import type { ReactiveEvent, Sort } from "../types";
   import Statement from "./Statement.svelte";
 
   $: statements = groupStatements($ev_store);
-  $: items = Array.from(statements.values());
+
+  let grouped_items: ReactiveEvent[];
+  $: grouped_items = Array.from(statements.values());
+
+  $: filter_text = $pref_store.filter_text;
+  $: items = filter_text ? grouped_items.filter(ev => ev.statement.toLowerCase().includes(filter_text.toLowerCase())) : grouped_items;
 
   function groupStatements (events) {
     let statements = new Map();
