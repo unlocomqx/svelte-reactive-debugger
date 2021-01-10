@@ -10,7 +10,7 @@
 </script>
 
 <div>
-  {#if $pref_store.debugger_enabled}
+  {#if $dbg_store.debugger_enabled}
     <Toolbar/>
     {#if !$dbg_store.tab_connected}
       <p style="text-align: center;">
