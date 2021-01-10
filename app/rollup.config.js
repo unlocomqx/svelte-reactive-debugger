@@ -42,6 +42,7 @@ export default {
     file: "../extension/dist/build/bundle.js",
     globals: {chrome: "chrome"},
   },
+  external: [ 'chrome' ],
   plugins: [
     svelte({
       preprocess: sveltePreprocess(),
