@@ -30,3 +30,12 @@ let runtime_port = chrome.runtime.connect();
 runtime_port.onDisconnect.addListener(function () {
   connected = false;
 });
+
+function injectScript(file_path, tag) {
+  var node = document.getElementsByTagName(tag)[0];
+  var script = document.createElement('script');
+  script.setAttribute('type', 'text/javascript');
+  script.setAttribute('src', file_path);
+  node.appendChild(script);
+}
+injectScript(chrome.extension.getURL('devtools/helper.js'), 'body');
