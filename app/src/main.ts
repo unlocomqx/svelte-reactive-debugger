@@ -1,5 +1,4 @@
-// @ts-ignore
-import { devtools } from "chrome";
+import { devtools, runtime } from "chrome";
 import * as jsondiffpatch from "jsondiffpatch";
 import { get } from "svelte/store";
 import App from "./App.svelte";
@@ -24,13 +23,13 @@ if (devtools.panels.onThemeChanged) {
 }
 
 // Create a connection to the background page
-var backgroundPort = chrome.runtime.connect({
+var backgroundPort = runtime.connect({
   name: "panel"
 });
 
 backgroundPort.postMessage({
   name : "init",
-  tabId: chrome.devtools.inspectedWindow.tabId
+  tabId: devtools.inspectedWindow.tabId
 });
 
 backgroundPort.onMessage.addListener(function (request) {
