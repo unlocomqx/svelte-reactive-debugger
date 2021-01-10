@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "npm run dev --prefix app",
     "package": "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --pack-extension=extension --pack-extension-key=extension.pem",
-    "build": "npm run build --prefix app && web-ext build --source-dir extension"
+    "build": "npm run build --prefix app && web-ext build --source-dir extension --overwrite-dest"
   },
   "repository": {
     "type": "git",
