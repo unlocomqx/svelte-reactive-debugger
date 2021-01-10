@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "npm run dev --prefix app",
-    "start": "npm run dev & web-ext run -s extension -u http://localhost:8080 -u about:debugging#/runtime/this-firefox --bc && kill $!",
+    "start": "npm run dev & web-ext run -s extension -u http://localhost:8080 -u about:debugging#/runtime/this-firefox && kill $!",
     "package": "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --pack-extension=extension --pack-extension-key=extension.pem",
     "build": "npm run build --prefix app && web-ext build -s extension --overwrite-dest"
   },
