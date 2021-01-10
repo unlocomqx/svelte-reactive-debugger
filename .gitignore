@@ -1,4 +1,2 @@
-extension.crx
-extension.pem
-extension.zip
 node_modules
+web-ext-artifacts

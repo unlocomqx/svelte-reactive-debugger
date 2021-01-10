@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "npm run dev --prefix app",
     "package": "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --pack-extension=extension --pack-extension-key=extension.pem",
-    "zip": "npm run build --prefix app && zip -r extension.zip extension/*"
+    "build": "npm run build --prefix app && web-ext build --source-dir extension"
   },
   "repository": {
     "type": "git",
@@ -23,7 +23,8 @@
   },
   "homepage": "https://github.com/unlocomqx/svelte-reactive-debugger#readme",
   "devDependencies": {
-    "@types/chrome": "^0.0.127"
+    "@types/chrome": "^0.0.127",
+    "web-ext": "^5.4.1"
   },
   "dependencies": {
     "copy-to-clipboard": "^3.3.1"
