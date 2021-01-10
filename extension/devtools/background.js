@@ -50,9 +50,13 @@ chrome.runtime.onMessage.addListener(function (request, sender) {
 });
 
 chrome.tabs.onUpdated.addListener((tabId, changed) => {
-  if (!connections.has(tabId) || changed.status != "loading" || changed.url) {
+  if (!connections.has(tabId) || changed.status != "loading" || (!isChrome && !changed.url)) {
     return;
   }
+
+  console.log(changed);
+  console.log("Inject content script");
+
   chrome.tabs.executeScript(tabId, {
     file: "/devtools/content.js",
     runAt: "document_start"
