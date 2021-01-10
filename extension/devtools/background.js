@@ -54,9 +54,6 @@ chrome.tabs.onUpdated.addListener((tabId, changed) => {
     return;
   }
 
-  console.log(changed);
-  console.log("Inject content script");
-
   chrome.tabs.executeScript(tabId, {
     file: "/devtools/content.js",
     runAt: "document_start"
