@@ -10,13 +10,23 @@ document.addEventListener("SvelteReactiveEnable", function () {
   post("SvelteReactiveEnable");
 });
 
+let connected = true;
+
 function post(type, detail) {
-  if (typeof chrome.app.isInstalled !== "undefined") {
-    chrome.runtime.sendMessage({
-      type,
-      detail,
-    });
+  if (!connected) {
+    // avoid extension context invaluidated errors
+    return;
   }
+  chrome.runtime.sendMessage({
+    type,
+    detail,
+  });
 }
 
 post("Reload");
+
+let runtime_port = chrome.runtime.connect();
+
+runtime_port.onDisconnect.addListener(function () {
+  connected = false;
+});
