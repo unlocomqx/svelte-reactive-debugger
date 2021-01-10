@@ -7,9 +7,11 @@
   import Summary from "./Components/Summary.svelte";
   import Toolbar from "./Components/Toolbar.svelte";
   import { dbg_store, pref_store, ui_store } from "./store";
+
+  const isChrome = typeof browser === "undefined";
 </script>
 
-<div>
+<div class:firefox={!isChrome}>
   {#if $dbg_store.debugger_enabled}
     <Toolbar/>
     {#if !$dbg_store.tab_connected}
@@ -45,3 +47,10 @@
     </div>
   {/if}
 </div>
+
+<style>
+  .firefox {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-size: 14px;
+  }
+</style>
