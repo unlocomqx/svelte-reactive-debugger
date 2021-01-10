@@ -1,3 +1,5 @@
+const isChrome = typeof browser == "undefined";
+
 // background.js
 var connections = new Map();
 
@@ -12,7 +14,6 @@ chrome.runtime.onConnect.addListener(function (port) {
       return;
     }
 
-    // other message handling
   };
 
   // Listen to messages sent from the DevTools page
@@ -53,7 +54,7 @@ chrome.tabs.onUpdated.addListener((tabId, changed) => {
     return;
   }
   chrome.tabs.executeScript(tabId, {
-    file: '/devtools/content.js',
-    runAt: 'document_start'
-  })
+    file: "/devtools/content.js",
+    runAt: "document_start"
+  });
 });
