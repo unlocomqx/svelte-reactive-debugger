@@ -88,10 +88,13 @@ const helperCompile = {
   output: {
     sourcemap: true,
     format: "iife",
-    name: "helper",
     file: "../extension/devtools/helper.js",
   },
   plugins: [
+    resolve({
+      extensions: [".js", ".jsx", ".ts", ".tsx"],
+      browser: true,
+    }),
     commonjs(),
     typescript({
       tsconfig: "helper/tsconfig.json",

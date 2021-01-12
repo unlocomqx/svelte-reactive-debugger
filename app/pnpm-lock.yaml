@@ -6,20 +6,20 @@ dependencies:
   svelte-local-storage-store: 0.1.4
   svelte-tablesort: github.com/unlocomqx/svelte-tablesort/186af509744356293e3afcb3b7561b005557d0c6
 devDependencies:
-  '@rollup/plugin-commonjs': 16.0.0_rollup@2.35.1
-  '@rollup/plugin-node-resolve': 10.0.0_rollup@2.35.1
-  '@rollup/plugin-typescript': 6.1.0_b8a13503b882eba59716f7be2689a09a
+  '@rollup/plugin-commonjs': 17.0.0_rollup@2.36.1
+  '@rollup/plugin-node-resolve': 11.0.1_rollup@2.36.1
+  '@rollup/plugin-typescript': 8.1.0_41183f0125727fce55578bdc26a9b002
   '@tsconfig/svelte': 1.0.10
-  rollup: 2.35.1
-  rollup-plugin-css-only: 3.1.0_rollup@2.35.1
+  rollup: 2.36.1
+  rollup-plugin-css-only: 3.1.0_rollup@2.36.1
   rollup-plugin-livereload: 2.0.0
-  rollup-plugin-svelte: 7.0.0_rollup@2.35.1+svelte@3.31.0
-  rollup-plugin-terser: 7.0.2_rollup@2.35.1
-  svelte: 3.31.0
-  svelte-check: 1.1.24_svelte@3.31.0
-  svelte-preprocess: 4.6.1_svelte@3.31.0+typescript@3.9.7
-  tslib: 2.0.3
-  typescript: 3.9.7
+  rollup-plugin-svelte: 7.0.0_rollup@2.36.1+svelte@3.31.2
+  rollup-plugin-terser: 7.0.2_rollup@2.36.1
+  svelte: 3.31.2
+  svelte-check: 1.1.26_svelte@3.31.2
+  svelte-preprocess: 4.6.1_svelte@3.31.2+typescript@4.1.3
+  tslib: 2.1.0
+  typescript: 4.1.3
 lockfileVersion: 5.2
 packages:
   /@babel/code-frame/7.12.11:
@@ -44,46 +44,46 @@ packages:
     dev: false
     resolution:
       integrity: sha512-3NsZsJIA/22P3QUyrEDNA2D133H4j224twJrdipXN38dpnIOzAbUDtOwkcJ5pXmn75w7LSQDjA4tO9dm1XlqlA==
-  /@rollup/plugin-commonjs/16.0.0_rollup@2.35.1:
+  /@rollup/plugin-commonjs/17.0.0_rollup@2.36.1:
     dependencies:
-      '@rollup/pluginutils': 3.1.0_rollup@2.35.1
+      '@rollup/pluginutils': 3.1.0_rollup@2.36.1
       commondir: 1.0.1
       estree-walker: 2.0.2
       glob: 7.1.6
       is-reference: 1.2.1
       magic-string: 0.25.7
       resolve: 1.19.0
-      rollup: 2.35.1
+      rollup: 2.36.1
     dev: true
     engines:
       node: '>= 8.0.0'
     peerDependencies:
       rollup: ^2.30.0
     resolution:
-      integrity: sha512-LuNyypCP3msCGVQJ7ki8PqYdpjfEkE/xtFa5DqlF+7IBD0JsfMZ87C58heSwIMint58sAUZbt3ITqOmdQv/dXw==
-  /@rollup/plugin-node-resolve/10.0.0_rollup@2.35.1:
+      integrity: sha512-/omBIJG1nHQc+bgkYDuLpb/V08QyutP9amOrJRUSlYJZP+b/68gM//D8sxJe3Yry2QnYIr3QjR3x4AlxJEN3GA==
+  /@rollup/plugin-node-resolve/11.0.1_rollup@2.36.1:
     dependencies:
-      '@rollup/pluginutils': 3.1.0_rollup@2.35.1
+      '@rollup/pluginutils': 3.1.0_rollup@2.36.1
       '@types/resolve': 1.17.1
       builtin-modules: 3.2.0
       deepmerge: 4.2.2
       is-module: 1.0.0
       resolve: 1.19.0
-      rollup: 2.35.1
+      rollup: 2.36.1
     dev: true
     engines:
       node: '>= 10.0.0'
     peerDependencies:
       rollup: ^1.20.0||^2.0.0
     resolution:
-      integrity: sha512-sNijGta8fqzwA1VwUEtTvWCx2E7qC70NMsDh4ZG13byAXYigBNZMxALhKUSycBks5gupJdq0lFrKumFrRZ8H3A==
-  /@rollup/plugin-typescript/6.1.0_b8a13503b882eba59716f7be2689a09a:
+      integrity: sha512-ltlsj/4Bhwwhb+Nb5xCz/6vieuEj2/BAkkqVIKmZwC7pIdl8srmgmglE4S0jFlZa32K4qvdQ6NHdmpRKD/LwoQ==
+  /@rollup/plugin-typescript/8.1.0_41183f0125727fce55578bdc26a9b002:
     dependencies:
-      '@rollup/pluginutils': 3.1.0_rollup@2.35.1
+      '@rollup/pluginutils': 3.1.0_rollup@2.36.1
       resolve: 1.19.0
-      rollup: 2.35.1
-      tslib: 2.0.3
-      typescript: 3.9.7
+      rollup: 2.36.1
+      tslib: 2.1.0
+      typescript: 4.1.3
     dev: true
     engines:
       node: '>=8.0.0'
@@ -92,13 +92,13 @@ packages:
       tslib: '*'
       typescript: '>=3.4.0'
     resolution:
-      integrity: sha512-hJxaiE6WyNOsK+fZpbFh9CUijZYqPQuAOWO5khaGTUkM8DYNNyA2TDlgamecE+qLOG1G1+CwbWMAx3rbqpp6xQ==
-  /@rollup/pluginutils/3.1.0_rollup@2.35.1:
+      integrity: sha512-pyQlcGQYRsONUDwXK3ckGPHjPzmjlq4sinzr7emW8ZMb2oZjg9WLcdcP8wyHSvBjvHrLzMayyPy079RROqb4vw==
+  /@rollup/pluginutils/3.1.0_rollup@2.36.1:
     dependencies:
       '@types/estree': 0.0.39
       estree-walker: 1.0.1
       picomatch: 2.2.2
-      rollup: 2.35.1
+      rollup: 2.36.1
     dev: true
     engines:
       node: '>= 8.0.0'
@@ -106,11 +106,11 @@ packages:
       rollup: ^1.20.0||^2.0.0
     resolution:
       integrity: sha512-GksZ6pr6TpIjHm8h9lSQ8pi8BE9VeubNT0OMJ3B5uZJ8pz73NPiqOtCog/x2/QzM1ENChPKxMDhiQuRHsqc+lg==
-  /@rollup/pluginutils/4.1.0_rollup@2.35.1:
+  /@rollup/pluginutils/4.1.0_rollup@2.36.1:
     dependencies:
       estree-walker: 2.0.2
       picomatch: 2.2.2
-      rollup: 2.35.1
+      rollup: 2.36.1
     dev: true
     engines:
       node: '>= 8.0.0'
@@ -347,7 +347,7 @@ packages:
     resolution:
       integrity: sha1-FQStJSMVjKpA20onh8sBQRmU6k8=
   /fsevents/2.1.3:
-    deprecated: Please update to v 2.2.x
+    deprecated: '"Please update to latest v2.3 or v2.2"'
     dev: true
     engines:
       node: ^8.16.0 || ^10.6.0 || >=11.0.0
@@ -635,10 +635,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-rArEXAgsBG4UgRGcynxWIWKFvh/XZCcS8UJdHhwy91zwAvCZIbcs+vAbflgBnNjYMs/i/i+/Ux6IZhML1yPvxg==
-  /rollup-plugin-css-only/3.1.0_rollup@2.35.1:
+  /rollup-plugin-css-only/3.1.0_rollup@2.36.1:
     dependencies:
-      '@rollup/pluginutils': 4.1.0_rollup@2.35.1
-      rollup: 2.35.1
+      '@rollup/pluginutils': 4.1.0_rollup@2.36.1
+      rollup: 2.36.1
     dev: true
     engines:
       node: '>=10.12.0'
@@ -654,12 +654,12 @@ packages:
       node: '>=8.3'
     resolution:
       integrity: sha512-oC/8NqumGYuphkqrfszOHUUIwzKsaHBICw6QRwT5uD07gvePTS+HW+GFwu6f9K8W02CUuTvtIM9AWJrbj4wE1A==
-  /rollup-plugin-svelte/7.0.0_rollup@2.35.1+svelte@3.31.0:
+  /rollup-plugin-svelte/7.0.0_rollup@2.36.1+svelte@3.31.2:
     dependencies:
       require-relative: 0.8.7
-      rollup: 2.35.1
+      rollup: 2.36.1
       rollup-pluginutils: 2.8.2
-      svelte: 3.31.0
+      svelte: 3.31.2
     dev: true
     engines:
       node: '>=10'
@@ -668,11 +668,11 @@ packages:
       svelte: '>=3.5.0'
     resolution:
       integrity: sha512-cw4yv/5v1NQV3nPbpOJtikgkB+9mfSJaqKUdq7x5fVQJnwLtcdc2JOszBs5pBY+SemTs5pmJbdEMseEavbUtjQ==
-  /rollup-plugin-terser/7.0.2_rollup@2.35.1:
+  /rollup-plugin-terser/7.0.2_rollup@2.36.1:
     dependencies:
       '@babel/code-frame': 7.12.11
       jest-worker: 26.6.2
-      rollup: 2.35.1
+      rollup: 2.36.1
       serialize-javascript: 4.0.0
       terser: 5.5.1
     dev: true
@@ -686,7 +686,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-EEp9NhnUkwY8aif6bxgovPHMoMoNr2FulJziTndpt5H9RdwC47GSGuII9XxpSdzVGM0GWrNPHV6ie1LTNJPaLQ==
-  /rollup/2.35.1:
+  /rollup/2.36.1:
     dev: true
     engines:
       node: '>=10.0.0'
@@ -694,7 +694,7 @@ packages:
     optionalDependencies:
       fsevents: 2.1.3
     resolution:
-      integrity: sha512-q5KxEyWpprAIcainhVy6HfRttD9kutQpHbeqDTWnqAFNJotiojetK6uqmcydNMymBEtC4I8bCYR+J3mTMqeaUA==
+      integrity: sha512-eAfqho8dyzuVvrGqpR0ITgEdq0zG2QJeWYh+HeuTbpcaXk8vNFc48B7bJa1xYosTCKx0CuW+447oQOW8HgBIZQ==
   /sade/1.7.4:
     dependencies:
       mri: 1.1.6
@@ -791,7 +791,7 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==
-  /svelte-check/1.1.24_svelte@3.31.0:
+  /svelte-check/1.1.26_svelte@3.31.2:
     dependencies:
       chalk: 4.1.0
       chokidar: 3.4.3
@@ -799,27 +799,27 @@ packages:
       import-fresh: 3.3.0
       minimist: 1.2.5
       source-map: 0.7.3
-      svelte: 3.31.0
-      svelte-preprocess: 4.6.1_svelte@3.31.0+typescript@3.9.7
-      typescript: 3.9.7
+      svelte: 3.31.2
+      svelte-preprocess: 4.6.1_svelte@3.31.2+typescript@4.1.3
+      typescript: 4.1.3
     dev: true
     hasBin: true
     peerDependencies:
       svelte: ^3.24.0
     resolution:
-      integrity: sha512-zKd2uX0cJMF7l1Wsw7kYSqpk2P2IB48AQLYJtgfUEIQt7S7r8sOrBvSQ6qjj6bVEouT7z9lcuzoOgjD16x8P/A==
+      integrity: sha512-IDi6KwDUSryxo5+F2Ru8oRMdaZse9c2UW8DJEjXAIYitn7qb0acNDj6WOK/4E1TlgDesO5MzS0SoeHZg5qUonQ==
   /svelte-local-storage-store/0.1.4:
     dev: false
     resolution:
       integrity: sha512-XlSJqMdV1UAROsKHYQSKwI9xU0u8En/nQ6ti2flmUhBA0PM+oqXjvCyM2849ONb5JbrpyUO18CwXcSJgxYCR8w==
-  /svelte-preprocess/4.6.1_svelte@3.31.0+typescript@3.9.7:
+  /svelte-preprocess/4.6.1_svelte@3.31.2+typescript@4.1.3:
     dependencies:
       '@types/pug': 2.0.4
       '@types/sass': 1.16.0
       detect-indent: 6.0.0
       strip-indent: 3.0.0
-      svelte: 3.31.0
-      typescript: 3.9.7
+      svelte: 3.31.2
+      typescript: 4.1.3
     dev: true
     engines:
       node: '>= 9.11.2'
@@ -862,12 +862,12 @@ packages:
     requiresBuild: true
     resolution:
       integrity: sha512-s7KdhR2pOsffyOzZIMEb315f6pfgeDnOWN47m6YKFeSEx3NMf/79Znc3vuG/Ai79SL/vsi86WDrjFPLGRfDesg==
-  /svelte/3.31.0:
+  /svelte/3.31.2:
     dev: true
     engines:
       node: '>= 8'
     resolution:
-      integrity: sha512-r+n8UJkDqoQm1b+3tA3Lh6mHXKpcfOSOuEuIo5gE2W9wQYi64RYX/qE6CZBDDsP/H4M+N426JwY7XGH4xASvGQ==
+      integrity: sha512-TxZGrXzX2ggFH3BIKY5fmbeMdJuZrMIMDYPMX6R9255bueuYIuVaBQSLUeY2oD7W4IdeqRZiAVGCjDw2POKBRA==
   /terser/5.5.1:
     dependencies:
       commander: 2.20.3
@@ -903,17 +903,17 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-gduQwd1rOdDMGxFG1gEvhV88Oirdo2p+KjoYFU7k2g+i7n6AFFbDQ5kMPUsW0pNbfQsB/cwXvT1i4Bue0s9g5g==
-  /tslib/2.0.3:
+  /tslib/2.1.0:
     dev: true
     resolution:
-      integrity: sha512-uZtkfKblCEQtZKBF6EBXVZeQNl82yqtDQdv+eck8u7tdPxjLu2/lp5/uPW+um2tpuxINHWy3GhiccY7QgEaVHQ==
-  /typescript/3.9.7:
+      integrity: sha512-hcVC3wYEziELGGmEEXue7D75zbwIIVUMWAVbHItGPx0ziyXxrOMQx4rQEVEV45Ut/1IotuEvwqPopzIOkDMf0A==
+  /typescript/4.1.3:
     dev: true
     engines:
       node: '>=4.2.0'
     hasBin: true
     resolution:
-      integrity: sha512-BLbiRkiBzAwsjut4x/dsibSTB6yWpwT5qWmC2OfuCg3GgVQCSgMs4vEctYPhsaGtd0AeuuHMkjZ2h2WG8MSzRw==
+      integrity: sha512-B3ZIOf1IKeH2ixgHhj6la6xdwR9QrLC5d1VKeCSY4tvkqhF2eqd9O7txNlS0PO3GrBAFIdr3L1ndNwteUbZLYg==
   /wrappy/1.0.2:
     dev: true
     resolution:
@@ -930,26 +930,26 @@ packages:
     dev: false
     name: svelte-tablesort
     resolution:
-      tarball: 'https://codeload.github.com/unlocomqx/svelte-tablesort/tar.gz/186af509744356293e3afcb3b7561b005557d0c6'
+      tarball: https://codeload.github.com/unlocomqx/svelte-tablesort/tar.gz/186af509744356293e3afcb3b7561b005557d0c6
     version: 1.1.0
 specifiers:
-  '@rollup/plugin-commonjs': ^16.0.0
-  '@rollup/plugin-node-resolve': ^10.0.0
-  '@rollup/plugin-typescript': ^6.0.0
-  '@tsconfig/svelte': ^1.0.0
+  '@rollup/plugin-commonjs': ^17.0.0
+  '@rollup/plugin-node-resolve': ^11.0.1
+  '@rollup/plugin-typescript': ^8.1.0
+  '@tsconfig/svelte': ^1.0.10
   copy-to-clipboard: ^3.3.1
   deep-object-diff: ^1.1.0
   jsondiffpatch: ^0.4.1
-  rollup: ^2.3.4
+  rollup: ^2.36.1
   rollup-plugin-css-only: ^3.1.0
   rollup-plugin-livereload: ^2.0.0
   rollup-plugin-svelte: ^7.0.0
-  rollup-plugin-terser: ^7.0.0
-  sirv-cli: ^1.0.0
-  svelte: ^3.0.0
-  svelte-check: ^1.0.0
+  rollup-plugin-terser: ^7.0.2
+  sirv-cli: ^1.0.10
+  svelte: ^3.31.2
+  svelte-check: ^1.1.26
   svelte-local-storage-store: ^0.1.4
-  svelte-preprocess: ^4.0.0
-  svelte-tablesort: 'github:unlocomqx/svelte-tablesort'
-  tslib: ^2.0.0
-  typescript: ^3.9.3
+  svelte-preprocess: ^4.6.1
+  svelte-tablesort: github:unlocomqx/svelte-tablesort
+  tslib: ^2.1.0
+  typescript: ^4.1.3

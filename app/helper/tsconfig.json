@@ -1,12 +1,10 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "es6",
-    "sourceMap": true,
-    "rootDirs": ["."]
+    "target": "esnext",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true
   },
-  "exclude": [
-    "node_modules"
-  ],
-  "include": ["./*.ts"]
+  "include": [
+    "./**/*"
+  ]
 }
