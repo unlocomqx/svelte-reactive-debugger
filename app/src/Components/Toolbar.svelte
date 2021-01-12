@@ -51,14 +51,6 @@
     padding: 3px 5px;
   }
 
-  .filters {
-    border-top: 1px solid rgb(205 205 205 / 100%);
-  }
-
-  :global(body.dark) .filters {
-    border-top: 1px solid #3a3a3a;
-  }
-
   input {
     display: inline;
     background: transparent;
