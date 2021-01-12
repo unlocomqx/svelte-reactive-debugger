@@ -1,2 +1,4 @@
 node_modules
 web-ext-artifacts
+*.map
+extension/devtools/helper.js

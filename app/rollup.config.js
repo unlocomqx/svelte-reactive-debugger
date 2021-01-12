@@ -33,7 +33,7 @@ function serve() {
   };
 }
 
-export default {
+const svelteCompile = {
   input: "src/main.ts",
   output: {
     sourcemap: true,
@@ -42,11 +42,11 @@ export default {
     file: "../extension/dist/build/bundle.js",
     globals: {chrome: "chrome"},
   },
-  external: [ 'chrome' ],
+  external: ["chrome"],
   plugins: [
     svelte({
       preprocess: sveltePreprocess(),
-			compilerOptions: {
+      compilerOptions: {
         // enable run-time checks when not in production
         dev: !production
       }
@@ -65,10 +65,10 @@ export default {
       dedupe: importee => importee === "svelte" || importee.startsWith("svelte/")
     }),
     commonjs(),
-		typescript({
-			sourceMap: !production,
-			inlineSources: !production
-		}),
+    typescript({
+      sourceMap: !production,
+      inlineSources: !production
+    }),
 
     // In dev mode, call `npm run start` once
     // the bundle has been generated
@@ -82,3 +82,23 @@ export default {
     clearScreen: false
   }
 };
+
+const helperCompile = {
+  input: "helper/helper.ts",
+  output: {
+    sourcemap: true,
+    format: "iife",
+    name: "helper",
+    file: "../extension/devtools/helper.js",
+  },
+  plugins: [
+    commonjs(),
+    typescript({
+      tsconfig: "helper/tsconfig.json",
+      sourceMap: !production,
+      inlineSources: !production
+    }),
+  ]
+};
+
+export default [svelteCompile, helperCompile];
