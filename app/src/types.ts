@@ -26,7 +26,6 @@ export type Sort = {
 export interface PrefStoreData {
   group_statements: boolean;
   preserve_log: boolean;
-  show_filters: boolean;
   changes_only: boolean;
   filter_text: string;
   sort: {
