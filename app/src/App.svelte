@@ -1,4 +1,6 @@
 <script lang="ts">
+  declare var browser;
+
   import Container from "./Components/Container.svelte";
   import Details from "./Components/Details.svelte";
   import LeftPane from "./Components/LeftPane.svelte";
@@ -6,6 +8,7 @@
   import RightPane from "./Components/RightPane.svelte";
   import Summary from "./Components/Summary.svelte";
   import Toolbar from "./Components/Toolbar.svelte";
+  import "./scss/global.scss";
   import { dbg_store, pref_store, ui_store } from "./store";
 
   const isChrome = typeof browser === "undefined";

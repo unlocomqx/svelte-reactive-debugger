@@ -5,6 +5,7 @@ import { terser } from "rollup-plugin-terser";
 import css from "rollup-plugin-css-only";
 import sveltePreprocess from "svelte-preprocess";
 import typescript from "@rollup/plugin-typescript";
+import scss from "rollup-plugin-scss";
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -68,6 +69,9 @@ const svelteCompile = {
     typescript({
       sourceMap: !production,
       inlineSources: !production
+    }),
+    scss({
+      output: '../extension/dist/build/global.css',
     }),
 
     // In dev mode, call `npm run start` once

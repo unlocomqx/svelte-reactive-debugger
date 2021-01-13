@@ -1,3 +1,5 @@
+@import "theme";
+
 html, body {
   margin: 0;
   padding: 0;
@@ -5,7 +7,7 @@ html, body {
 }
 
 body {
-  color: #3a3a3a;
+  color: $border-color-dark;
 }
 
 body.dark {
@@ -23,11 +25,11 @@ table.tablesort {
   width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
-  border: 1px solid rgb(205 205 205 / 100%);
+  border: 1px solid rgb(205, 205, 205);
 }
 
 body.dark table.tablesort {
-  border: 1px solid #3a3a3a;
+  border: 1px solid $border-color-dark;
 }
 
 table.tablesort th, table.tablesort td {
@@ -37,11 +39,11 @@ table.tablesort th, table.tablesort td {
 table.tablesort th {
   text-align: left;
   white-space: pre;
-  border-bottom: 1px solid rgb(205 205 205 / 100%);
+  border-bottom: 1px solid rgb(205, 205, 205);
 }
 
 body.dark table.tablesort th {
-  border-bottom: 1px solid #3a3a3a;
+  border-bottom: 1px solid $border-color-dark;
 }
 
 table.tablesort th::after {
@@ -58,11 +60,11 @@ table.tablesort th.descending::after {
 }
 
 table.tablesort tbody tr:nth-child(even) {
-  background-color: rgb(245 245 245 / 100%);
+  background-color: rgb(245, 245, 245);
 }
 
 body.dark table.tablesort tbody tr:nth-child(even) {
-  background-color: rgb(36 36 36 / 100%);
+  background-color: rgb(36, 36, 36);
 }
 
 .icon {
@@ -71,7 +73,7 @@ body.dark table.tablesort tbody tr:nth-child(even) {
   height: 24px;
   border: none;
   background-color: transparent;
-  background-image: url(icons/largeIcons.svg);
+  background-image: url(../../../extension/dist/icons/largeIcons.svg);
   cursor: pointer;
   outline: none;
 }
@@ -79,11 +81,11 @@ body.dark table.tablesort tbody tr:nth-child(even) {
 .icon.medium {
   width: 16px;
   height: 16px;
-  background-image: url(icons/mediumIcons.svg);
+  background-image: url(../../../extension/dist/icons/mediumIcons.svg);
 }
 
 .icon.on {
-  background-image: url(icons/largeIcons-on.svg);
+  background-image: url(../../../extension/dist/icons/largeIcons-on.svg);
 }
 
 .icon.delete {
