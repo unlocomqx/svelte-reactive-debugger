@@ -25,7 +25,7 @@ table.tablesort {
   width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
-  border: 1px solid rgb(205, 205, 205);
+  border: 1px solid $border-color-light;
 }
 
 body.dark table.tablesort {
@@ -39,7 +39,7 @@ table.tablesort th, table.tablesort td {
 table.tablesort th {
   text-align: left;
   white-space: pre;
-  border-bottom: 1px solid rgb(205, 205, 205);
+  border-bottom: 1px solid $border-color-light;
 }
 
 body.dark table.tablesort th {

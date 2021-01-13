@@ -1,4 +1,5 @@
 <script lang="ts">
+  // @ts-ignore
   import { TableSort } from "svelte-tablesort";
   import { fade } from "svelte/transition";
   import { ev_store, pref_store, ui_store } from "../store";
@@ -80,7 +81,9 @@
   </div>
 {/if}
 
-<style>
+<style lang="scss">
+  @import "../scss/theme";
+
   #statements-list {
     outline: none;
     height: 100vh;
@@ -88,11 +91,11 @@
   }
 
   tr.same {
-    background-color: rgba(255, 62, 0, 0.2) !important;
+    background-color: rgba($highlight-color, 0.2) !important;
   }
 
   tr.highlight {
-    background-color: rgb(255, 62, 0) !important;
+    background-color: $highlight-color !important;
     color: #fff;
   }
 </style>
