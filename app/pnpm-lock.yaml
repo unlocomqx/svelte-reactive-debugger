@@ -10,6 +10,7 @@ devDependencies:
   '@rollup/plugin-node-resolve': 11.0.1_rollup@2.36.1
   '@rollup/plugin-typescript': 8.1.0_41183f0125727fce55578bdc26a9b002
   '@tsconfig/svelte': 1.0.10
+  '@types/chrome': 0.0.128
   rollup: 2.36.1
   rollup-plugin-css-only: 3.1.0_rollup@2.36.1
   rollup-plugin-livereload: 2.0.0
@@ -122,6 +123,13 @@ packages:
     dev: true
     resolution:
       integrity: sha512-EBrpH2iXXfaf/9z81koiDYkp2mlwW2XzFcAqn6qh7VKyP8zBvHHAQzNhY+W9vH5arAjmGAm5g8ElWq6YmXm3ig==
+  /@types/chrome/0.0.128:
+    dependencies:
+      '@types/filesystem': 0.0.29
+      '@types/har-format': 1.2.5
+    dev: true
+    resolution:
+      integrity: sha512-eGc599TDtersMBW1cSnExHm0IHrXrO5xdk6Sa2Dq30ED+hR1rpT1ez0NNcCgvGO52nmktGfyvd3Uyquzv3LL4g==
   /@types/estree/0.0.39:
     dev: true
     resolution:
@@ -130,6 +138,20 @@ packages:
     dev: true
     resolution:
       integrity: sha512-jnqIUKDUqJbDIUxm0Uj7bnlMnRm1T/eZ9N+AVMqhPgzrba2GhGG5o/jCTwmdPK709nEZsGoMzXEDUjcXHa3W0g==
+  /@types/filesystem/0.0.29:
+    dependencies:
+      '@types/filewriter': 0.0.28
+    dev: true
+    resolution:
+      integrity: sha512-85/1KfRedmfPGsbK8YzeaQUyV1FQAvMPMTuWFQ5EkLd2w7szhNO96bk3Rh/SKmOfd9co2rCLf0Voy4o7ECBOvw==
+  /@types/filewriter/0.0.28:
+    dev: true
+    resolution:
+      integrity: sha1-wFTor02d11205jq8dviFFocU1LM=
+  /@types/har-format/1.2.5:
+    dev: true
+    resolution:
+      integrity: sha512-IG8AE1m2pWtPqQ7wXhFhy6Q59bwwnLwO36v5Rit2FrbXCIp8Sk8E2PfUCreyrdo17STwFSKDAkitVuVYbpEHvQ==
   /@types/node/14.14.16:
     dev: true
     resolution:
@@ -937,6 +959,7 @@ specifiers:
   '@rollup/plugin-node-resolve': ^11.0.1
   '@rollup/plugin-typescript': ^8.1.0
   '@tsconfig/svelte': ^1.0.10
+  '@types/chrome': ^0.0.128
   copy-to-clipboard: ^3.3.1
   deep-object-diff: ^1.1.0
   jsondiffpatch: ^0.4.1

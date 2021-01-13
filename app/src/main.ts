@@ -1,3 +1,4 @@
+// @ts-ignore
 import { devtools, runtime } from "chrome";
 import { stringify } from "javascript-stringify";
 import { get } from "svelte/store";
@@ -15,7 +16,7 @@ function setDarkMode (theme) {
   }
 }
 
-setDarkMode(devtools.panels.themeName);
+setDarkMode(chrome.devtools.panels.themeName);
 if (devtools.panels.onThemeChanged) {
   devtools.panels.onThemeChanged.addListener(setDarkMode);
 }
