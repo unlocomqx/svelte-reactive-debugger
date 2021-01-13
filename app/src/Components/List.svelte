@@ -83,6 +83,8 @@
 <style>
   #statements-list {
     outline: none;
+    height: 100vh;
+    overflow: auto;
   }
 
   tr.same {
