@@ -1,11 +1,9 @@
 import { devtools, runtime } from "chrome";
-import * as jsondiffpatch from "jsondiffpatch";
+import { stringify } from "javascript-stringify";
 import { get } from "svelte/store";
 import App from "./App.svelte";
 import { dbg_store, ev_store, pref_store, ui_store } from "./store";
 import type { ReactiveEvent } from "./types";
-
-const jsonDiff = jsondiffpatch.create({});
 
 const prefs = get(pref_store);
 
@@ -43,12 +41,12 @@ backgroundPort.onMessage.addListener(function (request) {
     let reactiveEvent: ReactiveEvent = request.detail;
     const duration = now - reactiveEvent.start_time;
 
-    const stateDiff = jsonDiff.diff(reactiveEvent.start_state, reactiveEvent.end_state);
+    let hasDiff = stringify(reactiveEvent.start_state) !== stringify(reactiveEvent.end_state);
 
     ev_store.insertEvent({
       ...reactiveEvent,
       duration,
-      has_changes: !!stateDiff,
+      has_changes: hasDiff,
     });
   }
 
