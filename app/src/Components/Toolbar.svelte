@@ -2,10 +2,11 @@
   import { ev_store, pref_store, ui_store } from "../store";
 
   function clearAll() {
+    hideDetails();
     ev_store.clear();
   }
 
-  function handleGroupStatementsChange() {
+  function hideDetails() {
     $ui_store.show_details = false;
     $ui_store.inspected_item = null;
   }
@@ -16,7 +17,7 @@
 
   <div class="divider"></div>
 
-  <input type="checkbox" id="group_statements" on:change={handleGroupStatementsChange}
+  <input type="checkbox" id="group_statements" on:change={hideDetails}
          bind:checked={$pref_store.group_statements}/>
   <label style="position: relative; top: -1px;" for="group_statements">Group statements</label>
 
