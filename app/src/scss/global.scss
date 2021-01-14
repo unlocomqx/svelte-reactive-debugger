@@ -74,7 +74,7 @@ body.dark table.tablesort tbody tr:nth-child(even) {
   height: 24px;
   border: none;
   background-color: transparent;
-  background-image: url(../../../extension/dist/icons/largeIcons.svg);
+  background-image: url(/dist/icons/largeIcons.svg);
   cursor: pointer;
   outline: none;
 }
@@ -82,11 +82,11 @@ body.dark table.tablesort tbody tr:nth-child(even) {
 .icon.medium {
   width: 16px;
   height: 16px;
-  background-image: url(../../../extension/dist/icons/mediumIcons.svg);
+  background-image: url(/dist/icons/mediumIcons.svg);
 }
 
 .icon.on {
-  background-image: url(../../../extension/dist/icons/largeIcons-on.svg);
+  background-image: url(/dist/icons/largeIcons-on.svg);
 }
 
 .icon.delete {
