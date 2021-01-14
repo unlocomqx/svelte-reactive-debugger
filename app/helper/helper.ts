@@ -1,6 +1,6 @@
 import { stringify } from "./stringify";
 
-(window as any).rxdDsp = function (type, detail, start_time, exec_id, start_state, end_state) {
+(window as any).rpDsp = function (type, detail, start_time, exec_id, start_state, end_state) {
   detail = detail || {};
   detail.start_time = start_time;
   detail.exec_id = exec_id;
