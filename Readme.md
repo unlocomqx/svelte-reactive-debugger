@@ -2,7 +2,7 @@
 Easily monitor svelte reactive statements
 
 This extension needs this custom preprocessor to work
-https://github.com/unlocomqx/svelte-rxd-preprocessor
+https://github.com/unlocomqx/svelte-reactive-preprocessor
 
 ## List
 The extension displays the statements as they are executed

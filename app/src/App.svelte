@@ -40,11 +40,11 @@
   {:else}
     <div style="text-align: center; padding: 15px;">
       <div>
-        Svelte RXD not detected, follow the steps described here to enable it
+        Svelte RD not detected, follow the steps described here to enable it
       </div>
       <div>
-        <a href="https://github.com/unlocomqx/svelte-rxd-preprocessor" target="_blank">
-          https://github.com/unlocomqx/svelte-rxd-preprocessor
+        <a href="https://github.com/unlocomqx/svelte-reactive-preprocessor" target="_blank">
+          https://github.com/unlocomqx/svelte-reactive-preprocessor
         </a>
       </div>
     </div>
