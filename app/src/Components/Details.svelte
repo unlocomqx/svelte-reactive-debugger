@@ -8,7 +8,7 @@
   const jsonDiff = jsondiffpatch.create({});
 
   let details_div: HTMLDivElement;
-  let details_width: number = $pref_store.details_width;
+  let details_width: number = $pref_store.details_width | 200;
 
   let endEntries;
   $: end_state = $ui_store.inspected_item?.end_state;
@@ -67,10 +67,10 @@
 
 <style>
   #details {
+    overflow: auto;
     position: relative;
     min-width: 200px;
-    min-height: 100%;
-    max-height: 100%;
+    height: 100vh;
     border-left: 1px solid #3a3a3a;
     border-bottom: 1px solid #3a3a3a;
   }
@@ -100,6 +100,10 @@
     font-family: inherit !important;
     font-size: inherit !important;
     padding: 0 !important;
+  }
+
+  :global(.jsondiffpatch-delta ul) {
+    white-space: nowrap;
   }
 
   :global(.jsondiffpatch-delta pre) {
