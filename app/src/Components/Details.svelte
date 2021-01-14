@@ -8,7 +8,7 @@
   const jsonDiff = jsondiffpatch.create({});
 
   let details_div: HTMLDivElement;
-  let details_width: number = $pref_store.details_width | 200;
+  let details_width: number = $pref_store.details_width || 200;
 
   let endEntries;
   $: end_state = $ui_store.inspected_item?.end_state;
