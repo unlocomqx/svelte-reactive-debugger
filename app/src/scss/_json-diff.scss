@@ -1,0 +1,34 @@
+.jsondiffpatch-unchanged {
+  display: none;
+}
+
+.jsondiffpatch-delta {
+  font-family: inherit !important;
+  font-size: inherit !important;
+  padding: 0 !important;
+}
+
+.jsondiffpatch-delta ul {
+  white-space: nowrap;
+}
+
+.jsondiffpatch-delta pre {
+  font-family: inherit !important;
+  font-size: inherit !important;
+}
+
+.jsondiffpatch-added .jsondiffpatch-property-name,
+.jsondiffpatch-added .jsondiffpatch-value pre,
+.jsondiffpatch-modified .jsondiffpatch-right-value pre,
+.jsondiffpatch-textdiff-added {
+  background: #8BC34A !important;
+  color: #000;
+}
+
+.jsondiffpatch-deleted .jsondiffpatch-property-name,
+.jsondiffpatch-deleted pre,
+.jsondiffpatch-modified .jsondiffpatch-left-value pre,
+.jsondiffpatch-textdiff-deleted {
+  background: #f44336 !important;
+  color: #fff;
+}

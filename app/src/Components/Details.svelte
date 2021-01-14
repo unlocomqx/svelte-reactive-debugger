@@ -91,39 +91,4 @@
   .state-row {
     margin-bottom: 10px;
   }
-
-  :global(.jsondiffpatch-unchanged) {
-    display: none;
-  }
-
-  :global(.jsondiffpatch-delta) {
-    font-family: inherit !important;
-    font-size: inherit !important;
-    padding: 0 !important;
-  }
-
-  :global(.jsondiffpatch-delta ul) {
-    white-space: nowrap;
-  }
-
-  :global(.jsondiffpatch-delta pre) {
-    font-family: inherit !important;
-    font-size: inherit !important;
-  }
-
-  :global(.jsondiffpatch-added .jsondiffpatch-property-name,
-  .jsondiffpatch-added .jsondiffpatch-value pre,
-  .jsondiffpatch-modified .jsondiffpatch-right-value pre,
-  .jsondiffpatch-textdiff-added) {
-    background: #8BC34A !important;
-    color: #000;
-  }
-
-  :global(.jsondiffpatch-deleted .jsondiffpatch-property-name,
-  .jsondiffpatch-deleted pre,
-  .jsondiffpatch-modified .jsondiffpatch-left-value pre,
-  .jsondiffpatch-textdiff-deleted) {
-    background: #f44336 !important;
-    color: #fff;
-  }
 </style>
