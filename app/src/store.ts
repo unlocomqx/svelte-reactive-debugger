@@ -24,7 +24,7 @@ export const ev_store: EventStore = createStore();
 
 
 function createPrefStore (): PrefStore {
-  const { subscribe, update, set } = localStorageWritable("svrxd_prefs", {
+  const { subscribe, update, set } = localStorageWritable("svrd_prefs", {
     group_statements: true,
     preserve_log    : false,
     changes_only    : false,
