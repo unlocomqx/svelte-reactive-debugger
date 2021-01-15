@@ -13,3 +13,9 @@ The extension displays the statements as they are executed
 The statements are grouped to show the total count and duration of each statement
 
 ![panel preview](images/summary.png)
+
+# How to build
+```shell
+npm i && npm i --prefix app
+npm run build
+```
