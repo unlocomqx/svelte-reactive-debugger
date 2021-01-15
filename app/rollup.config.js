@@ -1,7 +1,6 @@
 import svelte from "rollup-plugin-svelte";
 import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve";
-import { terser } from "rollup-plugin-terser";
 import css from "rollup-plugin-css-only";
 import sveltePreprocess from "svelte-preprocess";
 import typescript from "@rollup/plugin-typescript";
@@ -67,7 +66,7 @@ const svelteCompile = {
     }),
     commonjs(),
     typescript({
-      sourceMap: !production,
+      sourceMap: true,
       inlineSources: !production
     }),
     scss({
@@ -77,10 +76,6 @@ const svelteCompile = {
     // In dev mode, call `npm run start` once
     // the bundle has been generated
     !production && serve(),
-
-    // If we're building for production (npm run build
-    // instead of npm run dev), minify
-    production && terser()
   ],
   watch: {
     clearScreen: false
@@ -102,7 +97,7 @@ const helperCompile = {
     commonjs(),
     typescript({
       tsconfig: "helper/tsconfig.json",
-      sourceMap: !production,
+      sourceMap: true,
       inlineSources: !production
     }),
   ]
