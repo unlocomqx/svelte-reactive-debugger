@@ -20,3 +20,8 @@ npm i && npm i --prefix app
 npm run build
 ```
 _Built using node 15.4.0 and npm 7.0.15_
+
+# How to test (requires Firefox)
+```shell
+npm run start
+```
