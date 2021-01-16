@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "npm run dev --prefix app",
     "start": "npm run dev & web-ext run -s extension -u http://localhost:8080 -u about:debugging#/runtime/this-firefox && kill $!",
+    "build:icons": "for size in 16 24 48 96 128; do if [ ! -e extension/icons/icon-$size.png -o logo/svelte-logo.svg -nt extension/icons/icon-$size.png ]; then svgexport logo/svelte-logo.svg extension/icons/icon-$size.png $size:; fi; done",
     "build": "npm run build --prefix app && web-ext build -s extension --overwrite-dest"
   },
   "repository": {
@@ -24,6 +25,7 @@
   "homepage": "https://github.com/unlocomqx/svelte-reactive-debugger#readme",
   "devDependencies": {
     "@types/chrome": "^0.0.128",
+    "svgexport": "^0.4.1",
     "typescript": "^4.1.3",
     "web-ext": "^5.4.1"
   },
