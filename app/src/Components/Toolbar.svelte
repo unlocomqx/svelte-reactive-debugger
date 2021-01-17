@@ -62,12 +62,12 @@
   }
 
   input:focus {
-    border: 1px solid #4688f1;
+    border: 1px solid var(--border-color);
   }
 
   .divider {
     display: inline-block;
-    border-left: 1px solid #3a3a3a;
+    border-left: 1px solid var(--border-color);
     height: 20px;
     margin: 0 3px;
   }

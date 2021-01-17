@@ -8,12 +8,11 @@ html, body {
 }
 
 body {
-  color: $border-color-dark;
+  background: var(--bg-color);
+  color: var(--text-color);
 }
 
 body.dark {
-  background-color: rgb(42, 42, 46);
-  color: rgb(177, 177, 179);
   scrollbar-color: rgb(115, 115, 115) rgb(60, 60, 61);
 }
 
@@ -26,11 +25,7 @@ table.tablesort {
   width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
-  border: 1px solid $border-color-light;
-}
-
-body.dark table.tablesort {
-  border: 1px solid $border-color-dark;
+  border: 1px solid var(--border-color);
 }
 
 table.tablesort th, table.tablesort td {
@@ -40,11 +35,7 @@ table.tablesort th, table.tablesort td {
 table.tablesort th {
   text-align: left;
   white-space: pre;
-  border-bottom: 1px solid $border-color-light;
-}
-
-body.dark table.tablesort th {
-  border-bottom: 1px solid $border-color-dark;
+  border-bottom: 1px solid var(--border-color);
 }
 
 table.tablesort th::after {

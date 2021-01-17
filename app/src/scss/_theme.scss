@@ -1,4 +1,21 @@
+$bg-color-light: #fff;
+$text-color-light: #3a3a3a;
 $border-color-light: #cdcdcd;
+
+$text-color-dark: #B1B1B3;
+$bg-color-dark: #2A2A2E;
 $border-color-dark: #3a3a3a;
+
+:root {
+  --text-color: #{$text-color-light};
+  --bg-color: #{$bg-color-light};
+  --border-color: #{$border-color-light};
+}
+
+.dark {
+  --text-color: #{$text-color-dark};
+  --bg-color: #{$bg-color-dark};
+  --border-color: #{$border-color-dark};
+}
 
 $highlight-color: rgb(255, 62, 0);

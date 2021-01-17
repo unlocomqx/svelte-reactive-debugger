@@ -71,15 +71,15 @@
     position: relative;
     min-width: 200px;
     height: 100vh;
-    border-left: 1px solid #3a3a3a;
-    border-bottom: 1px solid #3a3a3a;
+    border-left: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
   }
 
   #details-header {
     font-weight: bold;
     padding: 0 5px;
-    border-top: 1px solid #3a3a3a;
-    border-bottom: 1px solid #3a3a3a;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
     height: 20px;
     line-height: 20px;
   }
