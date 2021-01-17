@@ -1,0 +1,30 @@
+.icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background-color: transparent;
+  background-image: url(/dist/icons/largeIcons.svg);
+  cursor: pointer;
+  outline: none;
+}
+
+.icon.medium {
+  width: 16px;
+  height: 16px;
+  background-image: url(/dist/icons/mediumIcons.svg);
+}
+
+.icon.on {
+  background-image: url(/dist/icons/largeIcons-on.svg);
+}
+
+.icon.delete {
+  background-position: 0px 144px;
+  width: 28px;
+  height: 24px;
+}
+
+.icon.medium.clear {
+  background-position: -32px 32px;
+}
