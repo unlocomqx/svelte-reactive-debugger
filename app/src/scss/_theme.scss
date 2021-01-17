@@ -1,20 +1,24 @@
-$bg-color-light: #FFF;
 $text-color-light: #3A3A3A;
+$bg-color-light: #FFF;
+$bg-alt-color-light: #f5f5f5;
 $border-color-light: #CDCDCD;
 
 $text-color-dark: #B1B1B3;
 $bg-color-dark: #2A2A2E;
+$bg-alt-color-dark: #242424;
 $border-color-dark: #3A3A3A;
 
 :root {
   --text-color: #{$text-color-light};
   --bg-color: #{$bg-color-light};
+  --bg-alt-color: #{$bg-alt-color-light};
   --border-color: #{$border-color-light};
 }
 
 .dark {
   --text-color: #{$text-color-dark};
   --bg-color: #{$bg-color-dark};
+  --bg-alt-color: #{$bg-alt-color-dark};
   --border-color: #{$border-color-dark};
 }
 
