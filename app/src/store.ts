@@ -1,5 +1,5 @@
 import { writable as localStorageWritable } from "svelte-local-storage-store";
-import { writable } from "svelte/store";
+import { get, writable } from "svelte/store";
 import type { DbgStore, EventStore, PrefStore, UiStore } from "./types";
 
 function createStore () {
@@ -65,7 +65,7 @@ function createDbgStore () {
     paused          : false,
   });
 
-  return {
+  let store = {
     subscribe,
     update,
     set,
@@ -76,7 +76,13 @@ function createDbgStore () {
         return state;
       });
     },
+
+    getProp (name) {
+      const store_data = get(store);
+      return store_data[name];
+    },
   };
+  return store;
 }
 export const dbg_store: DbgStore = createDbgStore();
 

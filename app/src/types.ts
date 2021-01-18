@@ -46,6 +46,7 @@ export interface DbgStoreData {
 
 export interface DbgStore extends Writable<DbgStoreData> {
   setProp (name: string, value: boolean);
+  getProp (name: string);
 }
 
 export interface UiStoreData {

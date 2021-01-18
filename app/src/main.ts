@@ -44,11 +44,13 @@ backgroundPort.onMessage.addListener(function (request) {
 
     let hasDiff = stringify(reactiveEvent.start_state) !== stringify(reactiveEvent.end_state);
 
-    ev_store.insertEvent({
-      ...reactiveEvent,
-      duration,
-      has_changes: hasDiff,
-    });
+    if (!dbg_store.getProp("paused")) {
+      ev_store.insertEvent({
+        ...reactiveEvent,
+        duration,
+        has_changes: hasDiff,
+      });
+    }
   }
 
   if (request.type === "Reload") {
