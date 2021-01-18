@@ -1,16 +1,20 @@
-document.addEventListener("SvelteReactiveStart", function (ev) {
-  post("SvelteReactiveStart", ev.detail);
-});
+if (!window.svrdAttached) {
+  document.addEventListener("SvelteReactiveStart", function (ev) {
+    post("SvelteReactiveStart", ev.detail);
+  });
 
-document.addEventListener("SvelteReactiveEnd", function (ev) {
-  post("SvelteReactiveEnd", ev.detail);
-});
+  document.addEventListener("SvelteReactiveEnd", function (ev) {
+    post("SvelteReactiveEnd", ev.detail);
+  });
 
-document.addEventListener("SvelteReactiveEnable", function () {
-  post("SvelteReactiveEnable");
-});
+  document.addEventListener("SvelteReactiveEnable", function () {
+    post("SvelteReactiveEnable");
+  });
+}
 
-let connected = true;
+window.svrdAttached = true;
+
+var connected = true;
 
 function post(type, detail) {
   if (!connected) {
@@ -25,7 +29,7 @@ function post(type, detail) {
 
 post("Reload");
 
-let runtime_port = chrome.runtime.connect();
+var runtime_port = chrome.runtime.connect();
 
 runtime_port.onDisconnect.addListener(function () {
   connected = false;
@@ -33,6 +37,9 @@ runtime_port.onDisconnect.addListener(function () {
 
 function injectScript(file_path, tag) {
   var node = document.getElementsByTagName(tag)[0];
+  if (!node) {
+    return;
+  }
   var script = document.createElement('script');
   script.setAttribute('type', 'text/javascript');
   script.setAttribute('src', file_path);
