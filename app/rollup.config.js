@@ -5,6 +5,7 @@ import css from "rollup-plugin-css-only";
 import sveltePreprocess from "svelte-preprocess";
 import typescript from "@rollup/plugin-typescript";
 import scss from "rollup-plugin-scss";
+import livereload from "rollup-plugin-livereload";
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -72,6 +73,10 @@ const svelteCompile = {
     scss({
       output: '../extension/dist/build/global.css',
     }),
+
+    // Watch the `public` directory and refresh the
+    // browser on changes when not in production
+    !production && livereload("../dist"),
 
     // In dev mode, call `npm run start` once
     // the bundle has been generated

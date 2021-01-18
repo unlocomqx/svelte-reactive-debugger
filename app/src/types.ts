@@ -41,9 +41,10 @@ export interface PrefStore extends Writable<PrefStoreData> {
 export interface DbgStoreData {
   tab_connected: boolean;
   debugger_enabled: boolean;
+  paused: boolean;
 }
 
-export interface DbgStore extends Readable<DbgStoreData> {
+export interface DbgStore extends Writable<DbgStoreData> {
   setProp (name: string, value: boolean);
 }
 

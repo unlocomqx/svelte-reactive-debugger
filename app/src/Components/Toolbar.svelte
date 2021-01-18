@@ -1,5 +1,5 @@
 <script>
-  import { ev_store, pref_store, ui_store } from "../store";
+  import { dbg_store, ev_store, pref_store, ui_store } from "../store";
 
   function clearAll() {
     hideDetails();
@@ -10,10 +10,16 @@
     $ui_store.show_details = false;
     $ui_store.inspected_item = null;
   }
+
+  function togglePaused() {
+    $dbg_store.paused = !$dbg_store.paused;
+  }
 </script>
 
 <div class="toolbar">
   <button on:click={clearAll} class="icon delete" title="Clear all" style="position: relative; top: -1px;"/>
+  <button on:click={togglePaused} class="icon" class:pause={!$dbg_store.paused} class:resume={$dbg_store.paused}
+          title="Pause/Resume debugger" style="position: relative; top: -1px;"/>
 
   <div class="divider"></div>
 

@@ -59,13 +59,16 @@ export const pref_store: PrefStore = createPrefStore();
 
 
 function createDbgStore () {
-  const { subscribe, update } = writable({
+  const { subscribe, set, update } = writable({
     tab_connected   : false,
     debugger_enabled: false,
+    paused          : false,
   });
 
   return {
     subscribe,
+    update,
+    set,
 
     setProp (name, value) {
       return update(state => {
