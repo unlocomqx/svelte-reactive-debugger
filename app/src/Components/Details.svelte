@@ -38,12 +38,17 @@
     State
   </div>
   <div id="details-body">
-    <div class="state-row">
-      <span style="font-weight: bold;">Changes</span>
-      <div>
-        {@html diffHtml}
+    {#if !start_state && !end_state}
+      <span>No state was detected, make sure that svelte dev mode is enabled</span>
+    {/if}
+    {#if diffHtml}
+      <div class="state-row">
+        <span style="font-weight: bold;">Changes</span>
+        <div>
+          {@html diffHtml}
+        </div>
       </div>
-    </div>
+    {/if}
     {#if endStateObj}
       <div class="state-row">
         <PropertyList
