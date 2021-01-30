@@ -39,7 +39,11 @@
   </div>
   <div id="details-body">
     {#if !start_state && !end_state}
-      <span>No state was detected, make sure that svelte dev mode is enabled</span>
+      <span>No state was detected, here are the checks to make</span>
+      <ul>
+        <li>Svelte dev mode is enabled</li>
+        <li>The preprocessor state option is enabled</li>
+      </ul>
     {/if}
     {#if diffHtml}
       <div class="state-row">
