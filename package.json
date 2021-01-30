@@ -7,7 +7,7 @@
     "dev": "npm run dev --prefix app",
     "start": "npm run dev & web-ext run -s extension -u http://localhost:8080 -u about:debugging#/runtime/this-firefox && kill $!",
     "build:icons": "for size in 16 24 32 48 96 128; do if [ ! -e extension/icons/icon-$size.png -o logo/logo.svg -nt extension/icons/icon-$size.png ]; then svgexport logo/logo.svg extension/icons/icon-$size.png $size:; fi; done",
-    "build": "npm run build --prefix app && npm run build:icons && web-ext build -s extension --overwrite-dest"
+    "build": "npm run build --prefix app && npm run build:icons && web-ext build -s extension --overwrite-dest && git archive -o ../svelte-reactive-debugger.zip HEAD"
   },
   "repository": {
     "type": "git",
