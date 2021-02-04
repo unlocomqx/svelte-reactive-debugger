@@ -4,6 +4,10 @@ Easily monitor svelte reactive statements
 This extension needs this custom preprocessor to work
 https://github.com/unlocomqx/svelte-reactive-preprocessor
 
+## Install
+[![](images/chrome_32x32.png)](https://chrome.google.com/webstore/detail/svelte-reactive-debugger/mieppkcamgfhpjedhnfdlbndijhohmjf)
+[![](images/firefox_32x32.png)](https://addons.mozilla.org/en-US/firefox/addon/svelte-reactive-debugger/)
+
 ## List
 The extension displays the statements as they are executed
 
