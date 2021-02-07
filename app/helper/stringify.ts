@@ -45,6 +45,5 @@ export function stringify(obj, replacer?, spaces?, cycleReplacer?) {
     };
   }
 
-  console.log(obj);
   return JSON.stringify(obj, serializer(replacer, cycleReplacer), spaces);
 }
