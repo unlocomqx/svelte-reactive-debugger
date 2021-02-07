@@ -1,4 +1,5 @@
 export function stringify(obj, replacer?, spaces?, cycleReplacer?) {
+
   function serializer(replacer, cycleReplacer) {
     var stack = [], keys = [];
 
@@ -23,6 +24,10 @@ export function stringify(obj, replacer?, spaces?, cycleReplacer?) {
         stack.push(value);
       }
 
+      // filter rpGlobal from dispatched state (being equal to window, we want to avoid seriliazing it)
+      if (key === "rpGlobal") {
+        return undefined;
+      }
       // filter functions
       if (typeof value === "function") {
         return undefined;
