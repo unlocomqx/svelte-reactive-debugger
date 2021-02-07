@@ -1,6 +1,6 @@
 {
   "name": "Svelte Reactive Debugger",
-  "version": "0.6",
+  "version": "0.7",
   "description": "Monitor svelte reactive statements",
   "icons": {
     "16": "icons/icon-16.png",

@@ -37,10 +37,14 @@ export function stringify(obj, replacer?, spaces?, cycleReplacer?) {
         return undefined;
       }
 
+      if (value instanceof Element) {
+        return undefined;
+      }
+
       return replacer == null ? value : replacer.call(this, key, value);
     };
   }
 
-
+  console.log(obj);
   return JSON.stringify(obj, serializer(replacer, cycleReplacer), spaces);
 }
