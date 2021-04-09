@@ -50,7 +50,7 @@ chrome.runtime.onMessage.addListener(function (request, sender) {
 });
 
 chrome.tabs.onUpdated.addListener((tabId, changed) => {
-  if (!connections.has(tabId) || changed.status != "loading" || (!isChrome && !changed.url)) {
+  if (!connections.has(tabId) || changed.status != "loading" || (isChrome && changed.url)) {
     return;
   }
 
