@@ -22,7 +22,7 @@ chrome.runtime.onConnect.addListener(function (port) {
   port.onDisconnect.addListener(function (port) {
     port.onMessage.removeListener(extensionListener);
 
-    var tabs = connections.keys();
+    var tabs = Array.from(connections.keys());
     for (var i = 0, len = tabs.length; i < len; i++) {
       if (connections.get(tabs[i]) == port) {
         connections.delete(tabs[i]);
