@@ -12,17 +12,28 @@
   },
   "devtools_page": "devtools/devtools.html",
   "web_accessible_resources": [
-    "devtools/content.js",
-    "devtools/helper.js"
+    {
+      "resources": [
+        "devtools/content.js",
+        "devtools/helper.js"
+      ],
+      "matches": [
+        "*://*/*"
+      ]
+    }
   ],
   "background": {
-    "scripts": [
-      "devtools/background.js"
-    ]
+    "service_worker": "devtools/background.js"
   },
   "permissions": [
     "tabs",
+    "scripting"
+  ],
+  "host_permissions": [
+    "http://localhost:8080/"
+  ],
+  "optional_host_permissions": [
     "<all_urls>"
   ],
-  "manifest_version": 2
+  "manifest_version": 3
 }

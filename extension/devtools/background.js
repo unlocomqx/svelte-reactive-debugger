@@ -35,10 +35,12 @@ chrome.runtime.onConnect.addListener(function (port) {
 // Receive message from content script and relay to the devTools page for the
 // current tab
 chrome.runtime.onMessage.addListener(function (request, sender) {
+  console.log({request})
   // Messages from content scripts should have sender.tab set
   if (sender.tab) {
     var tabId = sender.tab.id;
     if (connections.has(tabId)) {
+      console.log('post message', tabId, request);
       connections.get(tabId).postMessage(request);
     } else {
       console.log("Tab not found in connection list.");
@@ -54,8 +56,8 @@ chrome.tabs.onUpdated.addListener((tabId, changed) => {
     return;
   }
 
-  chrome.tabs.executeScript(tabId, {
-    file: "/devtools/content.js",
-    runAt: "document_start"
+  chrome.scripting.executeScript({
+    target: {tabId},
+    files: ["/devtools/content.js"],
   });
 });
