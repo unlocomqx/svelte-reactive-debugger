@@ -29,9 +29,6 @@
     "tabs",
     "scripting"
   ],
-  "host_permissions": [
-    "http://localhost:8080/"
-  ],
   "optional_host_permissions": [
     "<all_urls>"
   ],
